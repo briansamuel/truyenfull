@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use DB;
 use App\Stories;
+use App\Chapters;
 use App\Terms;
 use Illuminate\Http\Request;
 use App\Http\Requests\CheckStoryRequest;
@@ -355,17 +356,62 @@ class AdminController extends Controller
             return false;
         }
     }
-    public function test_get_image()
+    // Ajax Chapter
+    public function AutoAddChapter($serial,$title,$content,$parent)
     {
-        $url = "http://theonlytutorials.com/wp-content/uploads/2015/06/blog-logo1.png";
-        $name = basename($url);
-        $uploadfile = $_SERVER['DOCUMENT_ROOT'] ."/truyenfull/upload/images/Thumbnail/$name";
-        $upload = file_put_contents($uploadfile,file_get_contents($url));
-        //check success
-        if($upload)
-            echo "Success: <a href='upload/".$name."' target='_blank'>Check Uploaded</a>"; 
-        else "please check your folder permission";
+        $chapters = new Chapters;
+        $chapters->chapter_serial = $serial;
+        $chapters->chapter_title = $title;
+        $chapters->chapter_content = $content;
+        $chapters->story_parent = $parent;
+        $chapters->chapter_status = 'publish';
+        $result = $chapters->save();
+        if($result)
+        {
+            echo $title.' - Đăng thành công <br>';
+        }
+    }
+    public function ajaxGetchapter(Request $request)
+    {
+        include_once(app_path() . '\Libraries\simple_html_dom.php');
+        $data = $request->all(); // This will get all the request data.
+        $url = $data['url'];
+        $html = $this->CurlHTML($url);
+        $html = str_get_html($html);
+        $story_array_url = array();
+        $elements = $html->find('#list-chapter .row a ');
+        foreach ($elements as $element)
+            array_push($story_array_url, $element->href);
+        echo json_encode($story_array_url);
+    }
+    public function ajaxAddchapter(Request $request)
+    {   
+        include_once(app_path() . '\Libraries\simple_html_dom.php');
+        $data = $request->all(); // This will get all the request data.
+        $url = $data['url'];
+        $parent = $data['parent'];
+        $html_story = $this->CurlHTML($url);
+        $html_story = str_get_html($html_story);
+        $title = "";
+        $serial = "";
+        $content = "";
+        foreach($html_story->find('h2.chapter-title') as $element) {
 
+            $title = $element->innertext;
+            if (isset($title)) {
+                break;
+            }
+        }
+        foreach($html_story->find('.chapter-c') as $element) {
+            $content = $element->content;
+            if (isset($content)) {
+                break;
+            }
 
+        }
+        $returnValue = explode('/chuong-', $url);
+        $serial = str_replace("/", "", $returnValue[1]);
+        $this->AutoAddChapter($serial,$title,$content,$parent);
+            
     }
 }

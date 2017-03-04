@@ -26,10 +26,15 @@ Route::get('/admin/test','AdminController@test');
 Route::get('/admin/plugins/autostory',function () {
     return view('admin/plugins/autostory');
 });
+Route::get('/admin/plugins/autochapter',function () {
+    return view('admin/plugins/autochapter');
+});
 Route::get('/datatables/data','DatatablesController@listStoryData');
 // Ajax
 Route::post('/admin/ajax/getstory','AdminController@ajaxGetstory');
+Route::post('/admin/ajax/getchapter','AdminController@ajaxGetchapter');
 Route::post('/admin/ajax/addstory','AdminController@ajaxAddstory');
+Route::post('/admin/ajax/addchapter','AdminController@ajaxAddchapter');
 Route::get('/admin/ajax/liststory','StoryController@AjaxListStory');
 
 
