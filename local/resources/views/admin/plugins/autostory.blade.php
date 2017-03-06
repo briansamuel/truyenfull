@@ -143,6 +143,8 @@
               url: "admin/ajax/addchapter",
               type: 'POST',
               dataType: "text",
+              timeout: 10000,
+              async: false,
               data: {
                   "url": url,
                   "_token": token,
@@ -169,10 +171,13 @@
 
             url: "admin/ajax/getchapter",
             type: 'POST',
+            timeout: 10000,
+            async: false,
             dataType: "JSON",
             data: {
                 "url": lines[i],
-                "_token": token
+                "_token": token,
+
             },
             success: function(response){ // What to do if we succeed
                
@@ -185,7 +190,7 @@
             }
         });
         getListChapterAjax(lines,i-1);
-     }, 2000);
+     }, 500);
   }
   function addStoryAjax(lines,i)
   {

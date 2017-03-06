@@ -174,16 +174,15 @@
 
               url: "admin/ajax/addchapter",
               type: 'POST',
-              dataType: "JSON",
+              dataType: "text",
               data: {
                   "url": url,
                   "_token": token,
                   "parent": parent,
               },
               success: function(response){ // What to do if we succeed
-                  var response = JSON.parse(response);
-                  console.log(response['message']);
-                  $('#list-result').append(response['message']+"<br>");
+                  console.log(response);
+                  $('#list-result').append(response+"<br>");
               },
               error: function(jqXHR, textStatus, errorThrown) { // What to do if we fail
                   //console.log(JSON.stringify(jqXHR));
