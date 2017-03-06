@@ -164,8 +164,9 @@
     var token = $('#start-auto').data("token");
     var parent = $('.js-data-example-ajax').val();
     var url = lines[i];
+    var length = lines.length - 1;
     //console.log(url);
-    if (i < 0) return;
+    if (i > length) return;
     setTimeout(function() {
       console.log(lines[i]);
       console.log(parent);
@@ -173,23 +174,24 @@
 
               url: "admin/ajax/addchapter",
               type: 'POST',
-              dataType: "text",
+              dataType: "JSON",
               data: {
                   "url": url,
                   "_token": token,
                   "parent": parent,
               },
               success: function(response){ // What to do if we succeed
-                  console.log(response);
-                  $('#list-result').append(response+"<br>");
+                  var response = JSON.parse(response);
+                  console.log(response['message']);
+                  $('#list-result').append(response['message']+"<br>");
               },
               error: function(jqXHR, textStatus, errorThrown) { // What to do if we fail
                   //console.log(JSON.stringify(jqXHR));
                   //console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
               }
           });
-       addStoryAjax(lines,i-1);
-     }, 5000);
+       addStoryAjax(lines,i+1);
+     }, 1000);
   }
   function getListStoryAjax(lines,i)
   {
@@ -208,7 +210,7 @@
             },
             success: function(response){ // What to do if we succeed
                
-                addStoryAjax(response,response.length-1);
+                addStoryAjax(response,0);
                 console.log(response[i]);
             },
             error: function(jqXHR, textStatus, errorThrown) { // What to do if we fail

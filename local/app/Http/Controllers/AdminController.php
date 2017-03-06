@@ -226,7 +226,8 @@ class AdminController extends Controller
                 }
                 else
                 {
-                    echo 'Trùng lặp với ID '.$story_title_exist->id;
+                    $arrayResult = array('message' => 'Trùng lặp với ID '.$story_title_exist->id,'status' => 'error' );
+                    echo $arrayResult;
                 }
                 
             }
@@ -234,7 +235,7 @@ class AdminController extends Controller
         }
 
     }
-    public function AutoAddStory($title,$excerpt,$keywords,$author,$thumbnail)
+    public function AutoAddStory($url,$title,$excerpt,$keywords,$author,$thumbnail)
     {
         $stories = new Stories;
         $stories->story_title = $title;
@@ -247,7 +248,15 @@ class AdminController extends Controller
         $result = $stories->save();
         if($result)
         {
-            echo $title.' - Đăng thành công <br>';
+            $html = $this->CurlHTML($url);
+            $html = str_get_html($html);
+            $story_array_url = array();
+            $elements = $html->find('#list-chapter .row a ');
+            foreach ($elements as $element)
+                array_push($story_array_url, $element->href);
+            $arrayResult = array('list_chapter' => $story_array_url,'message' => $title.' - Tạo truyện thành công ','id' => $stories->id );
+            echo json_encode($arrayResult);
+
         }
     }
     public function CurlHTML($url)
@@ -335,10 +344,11 @@ class AdminController extends Controller
         $story_title_exist = DB::table('stories')->where('story_title', '=', $title)->first();
         if (is_null($story_title_exist)) {
             $thumbnail = $this->creatThumbbyUrl($thumbnail);
-            $this->AutoAddStory($title, $excerpt, $keywords, $author, $thumbnail);
+            $this->AutoAddStory($url,$title, $excerpt, $keywords, $author, $thumbnail);
             // It does not exist - add to favorites button will show
         } else {
-            echo 'Trùng lặp với ID '.$story_title_exist->id.'<br>';
+            $arrayResult = array('message' => 'Trùng lặp với ID '.$story_title_exist->id,'status' => 'error' );
+                    echo json_encode($arrayResult);
         }
             
     }
@@ -395,15 +405,17 @@ class AdminController extends Controller
         $title = "";
         $serial = "";
         $content = "";
-        foreach($html_story->find('h2.chapter-title') as $element) {
+        foreach($html_story->find('h2') as $element) {
 
-            $title = $element->innertext;
+           
+            
+            $title = $element->plaintext;
             if (isset($title)) {
                 break;
             }
         }
         foreach($html_story->find('.chapter-c') as $element) {
-            $content = $element->content;
+            $content = $element->plaintext;
             if (isset($content)) {
                 break;
             }
@@ -411,6 +423,7 @@ class AdminController extends Controller
         }
         $returnValue = explode('/chuong-', $url);
         $serial = str_replace("/", "", $returnValue[1]);
+        $serial = str_replace("-", ".", $serial);
         $this->AutoAddChapter($serial,$title,$content,$parent);
             
     }

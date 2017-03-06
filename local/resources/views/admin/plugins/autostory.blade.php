@@ -131,20 +131,22 @@
           }
       });
   }
-  function addStoryAjax(url)
+  function addChapterAjax(lines,i,parent)
   {
     var token = $('#start-auto').data("token");
-    //console.log(url);
+    var url = lines[i];
+    var length = lines.length - 1;
+    if (i > length) return;
     setTimeout(function() {
-      console.log(url);
       $.ajax({
 
-              url: "admin/ajax/addstory",
+              url: "admin/ajax/addchapter",
               type: 'POST',
               dataType: "text",
               data: {
                   "url": url,
-                  "_token": token
+                  "_token": token,
+                  "parent": parent,
               },
               success: function(response){ // What to do if we succeed
                   console.log(response);
@@ -155,7 +157,67 @@
                   //console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
               }
           });
-     }, 5000);
+       addChapterAjax(lines,i+1,parent);
+     }, 500);
+  }
+  function getListChapterAjax(lines,i,parent)
+  {
+    var token = $('#start-auto').data("token");
+    if (i < 0) return;
+    setTimeout(function() {
+        $.ajax({
+
+            url: "admin/ajax/getchapter",
+            type: 'POST',
+            dataType: "JSON",
+            data: {
+                "url": lines[i],
+                "_token": token
+            },
+            success: function(response){ // What to do if we succeed
+               
+                //addChapterAjax(response,0,parent);
+                //console.log(response[i]);
+            },
+            error: function(jqXHR, textStatus, errorThrown) { // What to do if we fail
+                //console.log(JSON.stringify(jqXHR));
+                //console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+            }
+        });
+        getListChapterAjax(lines,i-1);
+     }, 2000);
+  }
+  function addStoryAjax(lines,i)
+  {
+    var token = $('#start-auto').data("token");
+    //console.log(url);
+    var url = lines[i];
+    if(i < 0) return;
+    setTimeout(function() {
+      console.log(url);
+      $.ajax({
+
+              url: "admin/ajax/addstory",
+              type: 'POST',
+              dataType: "JSON",
+              data: {
+                  "url": url,
+                  "_token": token
+              },
+              success: function(response){ // What to do if we succeed
+                  
+                  var lines = response['list_chapter'];
+                  var i = lines.length-1;
+                  addChapterAjax(lines,0,response['id']);
+                  $('#list-result').append(response['message']+"<br>");
+              },
+              error: function(jqXHR, textStatus, errorThrown) { // What to do if we fail
+                  //console.log(JSON.stringify(jqXHR));
+                  //console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+              }
+          });
+       addStoryAjax(lines,i-1);  
+     }, 60000);
   }
   function getListStoryAjax(lines,i)
   {
@@ -174,13 +236,7 @@
                 "_token": token
             },
             success: function(response){ // What to do if we succeed
-               
-                for (var i = response.length - 1; i >= 0; i--) {
-                  addStoryAjax(response[i]);
-                    
-                 
-                  
-                }
+                 addStoryAjax(response,response.length-1);
             },
             error: function(jqXHR, textStatus, errorThrown) { // What to do if we fail
                 //console.log(JSON.stringify(jqXHR));
@@ -189,7 +245,7 @@
         });
         console.log("Next Auto");
         getListStoryAjax(lines,i-1);
-     }, 10000);
+     }, 5000);
   }
   $(function () {
     
