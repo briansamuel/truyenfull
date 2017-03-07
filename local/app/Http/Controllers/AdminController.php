@@ -7,6 +7,7 @@ use App\Chapters;
 use App\Terms;
 use Illuminate\Http\Request;
 use App\Http\Requests\CheckStoryRequest;
+use Carbon\Carbon;
 class AdminController extends Controller
 {
     /**
@@ -163,76 +164,14 @@ class AdminController extends Controller
 
     public function test()
     {
-        include_once(app_path() . '\Libraries\simple_html_dom.php');
-        $url = 'http://truyenfull.vn/the-loai/tien-hiep/trang-3/';
-        $html = $this->CurlHTML($url);
-        $html = str_get_html($html);
-        $elements = $html->find('.truyen-title a ');
-        foreach ($elements as $element) {
-            if(isset($element->href))
-            {
-                $html_story = $this->CurlHTML($element->href);
-                $html_story = str_get_html($html_story);
-                $title = "";
-                $excerpt = "";
-                $keywords = "";
-                $author = "";
-                $thumbnail = "";
-                foreach ($html_story->find('h3.title') as $element)
-                {
-
-                    $title = $element->innertext;
-                    if(isset($title))
-                    {
-                        break;
-                    }
-                }
-                foreach ($html_story->find('meta[name=keywords]') as $element){
-                    $keywords = $element->content;
-                    if(isset($keywords))
-                    {
-                        break;
-                    }
-
-                }
-                foreach ($html_story->find('.desc-text') as $element){
-                    $excerpt = $element->plaintext;
-                    if(isset($excerpt))
-                    {
-                        break;
-                    }
-                }
-                foreach ($html_story->find('.info a[itemprop="author"]') as $element){
-                    $author = $element->innertext;
-                    if(isset($author))
-                    {
-                        break;
-                    }
-                }
-                foreach ($html_story->find('.books img') as $element){
-
-                    $thumbnail = $element->src;
-                    if(isset($thumbnail))
-                    {
-                        break;
-                    }
-                }
-                $story_title_exist = DB::table('stories')
-                    ->where('story_title', '=', $title)
-                    ->first();
-                if (is_null($story_title_exist)) {
-                    $this->AutoAddStory($title,$excerpt,$keywords,$author,$thumbnail);
-                    // It does not exist - add to favorites button will show
-                }
-                else
-                {
-                    $arrayResult = array('message' => 'Trùng lặp với ID '.$story_title_exist->id,'status' => 'error' );
-                    echo $arrayResult;
-                }
-                
-            }
-            
-        }
+        $last_chapters = DB::table('stories')
+            ->join('chapters', 'stories.last_chapter', '=', 'chapters.chapter_id')
+            ->select('stories.story_title','chapters.chapter_serial','chapters.chapter_title','stories.story_thumbnail','chapters.chapter_id')
+            ->orderBy('stories.chapter_update_at','desc')
+            ->offset(0)
+            ->limit(20)
+            ->get();
+        echo $last_chapters;
 
     }
     public function AutoAddStory($url,$title,$excerpt,$keywords,$author,$thumbnail)
@@ -378,6 +317,11 @@ class AdminController extends Controller
         $result = $chapters->save();
         if($result)
         {
+            
+            $chapter_updated_at = Carbon::now();
+            DB::table('stories')
+            ->where('id', $parent)
+            ->update(array('last_chapter' => $chapters->id,'chapter_update_at' => $chapter_updated_at)); 
             echo $title.' - Đăng thành công <br>';
         }
     }
@@ -421,7 +365,7 @@ class AdminController extends Controller
             }
 
         }
-        $returnValue = explode('/chuong-', $url);
+        $returnValue = explode('chuong-', $url);
         $serial = str_replace("/", "", $returnValue[1]);
         $serial = str_replace("-", ".", $serial);
         $this->AutoAddChapter($serial,$title,$content,$parent);

@@ -15,7 +15,7 @@ class CreateChaptersTable extends Migration
     {
         Schema::create('chapters', function (Blueprint $table) {
             $table->increments('chapter_id');
-            $table->integer('chapter_serial')->default(0);
+            $table->float('chapter_serial')->default(0);
             $table->text('chapter_title');
             $table->text('chapter_content');
             $table->text('chapter_status');
