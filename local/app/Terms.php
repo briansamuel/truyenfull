@@ -39,4 +39,26 @@ class Terms extends Model
         $html .= '</ul>';
         return $html;
     }
+    public static function findTermbyName($name)
+    {
+         $categories = DB::table('terms')->where('term_name', $name)->first();
+         if(isset($categories))
+         {
+
+            return $categories->term_id;
+         }
+         else
+         {
+            return false;
+         }
+
+    }
+    public static function listTermbyStory($id)
+    {
+        $categories = DB::table('term_relationships')
+        ->join('terms', 'terms.terms_id', '=', 'term_relationships.terms_id')
+        ->select('terms.terms_id','terms.terms_name','term_relationships.story_id')
+        ->where('term_relationships.story_id', $id)->get();
+        return $categories;
+    }
 }

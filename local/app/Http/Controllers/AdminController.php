@@ -5,6 +5,7 @@ use DB;
 use App\Stories;
 use App\Chapters;
 use App\Terms;
+use App\Term_Relationships;
 use Illuminate\Http\Request;
 use App\Http\Requests\CheckStoryRequest;
 use Carbon\Carbon;
@@ -174,26 +175,74 @@ class AdminController extends Controller
         echo $last_chapters;
 
     }
-    public function AutoAddStory($url,$title,$excerpt,$keywords,$author,$thumbnail)
+    public function AutogetTerm()
+    {
+        include_once(app_path() . '\Libraries\simple_html_dom.php');
+     
+        $url = 'http://truyenfull.vn/nga-duc-phong-thien/';
+        $html_story = $this->CurlHTML($url);
+        $html_story = str_get_html($html_story);
+        $terms = array();
+
+        
+    }
+    public function AutogetTerm2()
+    {
+        ini_set('max_execution_time', 800);
+        $url = 'http://truyenfull.vn/';
+        $html = $this->CurlHTML($url);
+        $html = str_get_html($html);
+        $elements = $html->find('.dropdown-menu a');
+        foreach ($elements as $element)
+        {
+            $title = '';
+            $keywords = '';
+            $description = '';
+            $terms = new Terms;
+            $terms->term_name = $element->plaintext;
+            $html2 = $this->CurlHTML($element->href);
+            $html2 = str_get_html($html2);
+            foreach($html2->find('meta[name=keywords]') as $element)
+                $keywords = $element->content;
+            foreach($html2->find('meta[name=description]') as $element)
+                $description = $element->content;
+            foreach($html2->find('title') as $element)
+                $title = $element->plaintext;
+            $terms->term_title = $title;
+            $terms->term_keyword = $keywords;
+            $terms->term_description = $description;
+            $terms->term_slug = str_slug($element->plaintext);
+            $terms->term_type = 'category';
+            $terms->save();
+        }
+    }
+    public function AutoAddStory($url,$title,$excerpt,$keywords,$author,$thumbnail,$terms)
     {
         $stories = new Stories;
         $stories->story_title = $title;
         $stories->story_excerpt = $excerpt;
         $stories->story_keyword = $keywords;
         $stories->story_author = $author;
-
         $stories->story_thumbnail = $thumbnail;
         $stories->story_slug = str_slug($title);
         $result = $stories->save();
         if($result)
         {
+            foreach ($terms as $term) {
+                 $categories = new Terms;
+                 $term_id = $categories::findTermbyName($term);
+                 $term_ship = new Term_Relationships;
+                 $term_ship->term_id = $term_id;
+                 $term_ship->story_id = $stories->id;
+                 $term_ship->save();
+            }
             $html = $this->CurlHTML($url);
             $html = str_get_html($html);
             $story_array_url = array();
             $elements = $html->find('#list-chapter .row a ');
             foreach ($elements as $element)
                 array_push($story_array_url, $element->href);
-            $arrayResult = array('list_chapter' => $story_array_url,'message' => $title.' - Tạo truyện thành công ','id' => $stories->id );
+            $arrayResult = array('list_chapter' => $story_array_url,'message' => $title.' - Tạo truyện thành công ','id' => $stories->id,'term' => $terms );
             echo json_encode($arrayResult);
 
         }
@@ -247,6 +296,7 @@ class AdminController extends Controller
         $keywords = "";
         $author = "";
         $thumbnail = "";
+        $terms = array();
         foreach($html_story->find('h3.title') as $element) {
 
             $title = $element->innertext;
@@ -280,10 +330,14 @@ class AdminController extends Controller
                 break;
             }
         }
+        foreach($html_story->find('.info a[itemprop="genre"]') as $element) {
+            
+            array_push($terms, $element->innertext);
+        }
         $story_title_exist = DB::table('stories')->where('story_title', '=', $title)->first();
         if (is_null($story_title_exist)) {
             $thumbnail = $this->creatThumbbyUrl($thumbnail);
-            $this->AutoAddStory($url,$title, $excerpt, $keywords, $author, $thumbnail);
+            $this->AutoAddStory($url,$title, $excerpt, $keywords, $author, $thumbnail,$terms);
             // It does not exist - add to favorites button will show
         } else {
             $arrayResult = array('message' => 'Trùng lặp với ID '.$story_title_exist->id,'status' => 'error' );
