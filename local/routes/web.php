@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('public/index');
-});
+Route::get('/','PublicController@homePage');
 Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/admin', 'AdminController@index');
