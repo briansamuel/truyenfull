@@ -17,6 +17,7 @@ class CreateTermsTable extends Migration
             $table->increments('term_id');
             $table->text('term_name');
             $table->integer('term_parent')->default(0);
+            $table->text('term_title');
             $table->text('term_keyword');
             $table->text('term_description');
             $table->string('term_slug');

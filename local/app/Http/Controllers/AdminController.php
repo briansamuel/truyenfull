@@ -216,7 +216,7 @@ class AdminController extends Controller
             $terms->save();
         }
     }
-    public function AutoAddStory($url,$title,$excerpt,$keywords,$author,$thumbnail,$terms)
+    public function AutoAddStory($url,$title,$excerpt,$keywords,$author,$thumbnail,$status,$terms)
     {
         $stories = new Stories;
         $stories->story_title = $title;
@@ -224,6 +224,7 @@ class AdminController extends Controller
         $stories->story_keyword = $keywords;
         $stories->story_author = $author;
         $stories->story_thumbnail = $thumbnail;
+        $stories->story_status = $status;
         $stories->story_slug = str_slug($title);
         $result = $stories->save();
         if($result)
@@ -296,6 +297,7 @@ class AdminController extends Controller
         $keywords = "";
         $author = "";
         $thumbnail = "";
+        $status = "";
         $terms = array();
         foreach($html_story->find('h3.title') as $element) {
 
@@ -312,8 +314,14 @@ class AdminController extends Controller
 
         }
         foreach($html_story->find('.desc-text') as $element) {
-            $excerpt = $element->plaintext;
+            $excerpt = $element->innertext;
             if (isset($excerpt)) {
+                break;
+            }
+        }
+        foreach($html_story->find('.text-success') as $element) {
+            $status = $element->plaintext;
+            if (isset($status)) {
                 break;
             }
         }
@@ -337,7 +345,7 @@ class AdminController extends Controller
         $story_title_exist = DB::table('stories')->where('story_title', '=', $title)->first();
         if (is_null($story_title_exist)) {
             $thumbnail = $this->creatThumbbyUrl($thumbnail);
-            $this->AutoAddStory($url,$title, $excerpt, $keywords, $author, $thumbnail,$terms);
+            $this->AutoAddStory($url,$title, $excerpt, $keywords, $author, $thumbnail,$status,$terms);
             // It does not exist - add to favorites button will show
         } else {
             $arrayResult = array('message' => 'Trùng lặp với ID '.$story_title_exist->id,'status' => 'error' );

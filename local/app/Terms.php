@@ -55,10 +55,21 @@ class Terms extends Model
     }
     public static function listTermbyStory($id)
     {
+        $html = '';
+        $cate_array = array();
         $categories = DB::table('term_relationships')
-        ->join('terms', 'terms.terms_id', '=', 'term_relationships.terms_id')
-        ->select('terms.terms_id','terms.terms_name','term_relationships.story_id')
+        ->join('terms', 'terms.term_id', '=', 'term_relationships.term_id')
+        ->select('terms.term_id','terms.term_name','term_relationships.story_id','terms.term_slug')
         ->where('term_relationships.story_id', $id)->get();
-        return $categories;
+        $count = 1;
+        foreach ($categories as $category) {
+            if($count < 3)
+            {
+                array_push($cate_array, ' <a itemprop="genre" href="theloai/'.$category->term_slug.'">'.$category->term_name.'</a>');
+            }
+            $count++;
+        }
+        $html = implode(',',$cate_array);
+        return $html;
     }
 }

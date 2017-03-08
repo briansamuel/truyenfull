@@ -289,9 +289,9 @@
                 @foreach($last_chapters as $last_chapter)
                 <div class="row" itemscope itemtype="http://schema.org/Book">
                     <div class="col-xs-9 col-sm-6 col-md-5 col-title"><span class="glyphicon glyphicon-chevron-right"></span>
-                        <h3 itemprop="name"><a href="anh-mat-troi-khong-bang-em/index.html" title="Ánh Mặt Trời Không Bằng Em" itemprop="url">{{$last_chapter->story_title}}</a></h3></div>
-                    <div class="hidden-xs col-sm-3 col-md-3 col-cat text-888"><a itemprop="genre" href="the-loai/ngon-tinh/index.html" title="Ngôn Tình">Ngôn Tình</a>, <a itemprop="genre" href="the-loai/huyen-huyen/index.html" title="Huyền Huyễn">Huyền Huyễn</a></div>
-                    <div class="col-xs-3 col-sm-3 col-md-2 col-chap text-info"><a href="anh-mat-troi-khong-bang-em/chuong-24/index.html" title="Ánh Mặt Trời Không Bằng Em - Chương 24"><span class="chapter-text">{{$last_chapter->chapter_serial}}</a></div>
+                        <h3 itemprop="name"><a href="{{$last_chapter->story_slug}}" title="{{$last_chapter->story_title}}" itemprop="url">{{$last_chapter->story_title}}</a></h3></div>
+                    <div class="hidden-xs col-sm-3 col-md-3 col-cat text-888">{!!$last_chapter->term!!}</div>
+                    <div class="col-xs-3 col-sm-3 col-md-2 col-chap text-info"><a href="{{$last_chapter->story_slug}}/chuong-{{$last_chapter->chapter_serial}}" title="{{$last_chapter->story_slug}} - Chương {{$last_chapter->chapter_serial}}"><span class="chapter-text">{{$last_chapter->chapter_serial}}</a></div>
                     <div class="hidden-xs hidden-sm col-md-2 col-time text-888">10 phút trước </div>
                 </div>
                 @endforeach

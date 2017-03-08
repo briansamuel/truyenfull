@@ -12,6 +12,7 @@
 */
 
 Route::get('/','PublicController@homePage');
+Route::get('/{slug}','PublicController@storyPage');
 Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/admin', 'AdminController@index');
@@ -20,7 +21,7 @@ Route::get('/admin/chapter','AdminController@chaptersAction');
 Route::get('/admin/category','AdminController@categoriesAction');
 Route::post('/admin/story','StoryController@store');
 Route::post('/admin/category/add','TermController@addcategory');
-Route::get('/admin/test','AdminController@AutogetTerm');
+Route::get('/admin/test','AdminController@AutogetTerm2');
 Route::get('/admin/plugins/autostory',function () {
     return view('admin/plugins/autostory');
 });
