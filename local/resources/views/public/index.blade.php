@@ -173,61 +173,20 @@
                 </select>
             </div>
             <div class="index-intro">
-                <div class="item top-1" itemscope itemtype="http://schema.org/Book">
-                    <a href="linh-vu-thien-ha/index.html" itemprop="url">
-                        <div data-desk-image="http://static.truyenfull.vn/poster/n/QWJ4NzhWQUZmRkcxcTBldypGYVZaejBpX0deRmYqQCp2VmtBYUxNMm0xMW96THkxNE1XTnhUVUpCTVd4VCN5OVdaM0JbKURdUlNGJFVTUzlCUVVGQlFVRkJRVUppUVM4elNGRk9USCRUTjFwRU9DOTNNflkxTFdeek9UWXRTV00wTV49PQ==/linh-vu-thien-ha.jpg" data-alt="Linh Vũ Thiên Hạ" class="img-responsive lazyimg item-img" data-classname="img-responsive item-img"></div>
+                @php 
+                count = 1;
+                @endphp
+                @foreach($hot_stories as $hot_storie)
+                <div class="item top-{{$count}}" itemscope itemtype="http://schema.org/Book">
+                    <a href="{{$hot_storie->story_slug}}" itemprop="url">
+                        <div data-desk-image="{{$hot_storie->story_thumbnail}}" data-alt="{{$hot_storie->story_title}}" class="img-responsive lazyimg item-img" data-classname="img-responsive item-img"></div>
                         <div class="title">
-                            <h3 itemprop="name">Linh Vũ Thiên Hạ</h3></div>
+                            <h3 itemprop="name">{{$hot_storie->story_title}}</h3></div>
                     </a>
                 </div>
-                <div class="item top-2" itemscope itemtype="http://schema.org/Book"><a href="nga-duc-phong-thien/index.html" itemprop="url"><span class="full-label"></span><div data-desk-image="http://static.truyenfull.vn/poster/n/QWJ4NzhWQUZmRkcxcTBldypGYVZaejBpX0deRmYqQCp2VmtBYUxNMm0xMW96THkxfU56TkQkRTldWn4qQ195OVdZVFZ2O3wxKlJXWllTUzlCUVVGQlFVRkJRVzl2TkM5cTtUWlJURFoxU3tKRVdTOTNNVEk1TFdeeE9USXRTV00wTV49PQ==/nga-duc-phong-thien.jpg" data-alt="Ngã Dục Phong Thiên" class="img-responsive lazyimg item-img" data-classname="img-responsive item-img"></div><div class="title"><h3 itemprop="name">Ngã Dục Phong Thiên</h3></div></a></div>
-                <div class="item top-3" itemscope itemtype="http://schema.org/Book">
-                    <a href="thieu-gia-ac-ma-dung-hon-toi/index.html" itemprop="url">
-                        <div data-desk-image="http://static.truyenfull.vn/poster/n/QWJ4NzhWQUZmRkcxcTBldypGYVZaejBpX0deRmYqQCp2VmtBYUxNMm0xMW96THkxcCNYJHxNMUIjVEhwQFJTOVdORiR1IzFGcSNEXU1TUzlCUVVGQlFVRkJRVkZAWnk5Vk5XUjNXXV1DVlddT1VUUkJVR04oTFMxVykwKkcjMH0yVkdafDtbUlBfMyREU0UwdiR6RXlPUzF9TVRbeQ==/kiep-nan-tinh-nhan.jpg" data-alt="Thiếu Gia Ác Ma Đừng Hôn Tôi" class="img-responsive lazyimg item-img" data-classname="img-responsive item-img"></div>
-                        <div class="title">
-                            <h3 itemprop="name">Thiếu Gia Ác Ma Đừng Hôn Tôi</h3></div>
-                    </a>
-                </div>
-                <div class="item top-4" itemscope itemtype="http://schema.org/Book">
-                    <a href="van-co-chi-ton/index.html" itemprop="url">
-                        <div data-desk-image="http://static.truyenfull.vn/poster/n/QWJ4NzhWQUZmRkcxcTBldypGYVZaejBpX0deRmYqQCp2VmtBYUxNMm0xMW96THkxeU9EVnZVMF1FT0hKM05DOVdaVn15X1s1UFRdKjRTUzlCUVVGQlFVRkJRVUZ9U1M5Kk9WXURYMX1AVH5KSVNTOTNNVEk1TFdeeE9USXRTV00wTV49PQ==/van-co-chi-ton.jpg" data-alt="Vạn Cổ Chí Tôn" class="img-responsive lazyimg item-img" data-classname="img-responsive item-img"></div>
-                        <div class="title">
-                            <h3 itemprop="name">Vạn Cổ Chí Tôn</h3></div>
-                    </a>
-                </div>
-                <div class="item top-5" itemscope itemtype="http://schema.org/Book">
-                    <a href="doc-ton-tam-gioi/index.html" itemprop="url">
-                        <div data-desk-image="http://static.truyenfull.vn/poster/n/QWJ4NzhWQUZmRkcxcTBldypGYVZaejBpX0deRmYqQCp2VmtBYUxNMm0xMW96THkxQylWUk1UfFppVnkxRlVTOVdNVFIzX1ZFMlFdW3hTUzlCUVVGQlFVRkJRVkJTV1M5fFN6RjVae0pNKTBGWVFVdENfM11PU0RaKld8XjNWXVpTWXpSME4wSXRfVkZEUTI4diR6RXlPUzF9TVRbeQ==/doc-ton-tam-gioi.jpg" data-alt="Độc Tôn Tam Giới" class="img-responsive lazyimg item-img" data-classname="img-responsive item-img"></div>
-                        <div class="title">
-                            <h3 itemprop="name">Độc Tôn Tam Giới</h3></div>
-                    </a>
-                </div>
-                <div class="item top-6" itemscope itemtype="http://schema.org/Book"><a href="dau-pha-thuong-khung/index.html" itemprop="url"><span class="full-label"></span><div data-desk-image="http://static.truyenfull.vn/poster/n/QWJ4NzhWQUZmRkcxcTBldypGYVZaejBpX0deRmYqQCp2VmtBYUxNMm0xMW8yTHkxeFpbVlJXQzFAVURaVyN5OVdRWzFFTkRGI04xRkdTUzlCUVVGQlFVRkJRV3RNUVM5ME1FWk0jVEpTV0UqfU9DOTNNVEk1TFdeeE9UST0=/poster-dau-pha-thuong-khung.jpg" data-alt="Đấu Phá Thương Khung" class="img-responsive lazyimg item-img" data-classname="img-responsive item-img"></div><div class="title"><h3 itemprop="name">Đấu Phá Thương Khung</h3></div></a></div>
-                <div class="item top-7" itemscope itemtype="http://schema.org/Book"><a href="truyen-than-khong-thien-ha/index.html" itemprop="url"><span class="full-label"></span><div data-desk-image="http://static.truyenfull.vn/poster/n/QWJ4NzhWQUZmRkcxcTBldypGYVZaejBpX0deRmYqQCp2VmtBYUxNMm0xMW96THkwMl8zcF0kWzR4V1tFMFJTOVdUXUYyKTIqIVZYRTFTUzlCUVVGQlFVRkJRV0AzV1M5RiRYSlBZfiROWVQkWFVTOTNNVEk1TFdeeE9UST0=/than-khong-thien-ha.jpg" data-alt="Thần Khống Thiên Hạ" class="img-responsive lazyimg item-img" data-classname="img-responsive item-img"></div><div class="title"><h3 itemprop="name">Thần Khống Thiên Hạ</h3></div></a></div>
-                <div class="item top-8" itemscope itemtype="http://schema.org/Book">
-                    <a href="de-ba/index.html" itemprop="url">
-                        <div data-desk-image="http://static.truyenfull.vn/poster/n/QWJ4NzhWQUZmRkcxcTBldypGYVZaejBpX0deRmYqQCp2VmtBYUxNMm0xMW8wTHkxcV9XcHpNV0p6WkZKRVdTOVdVSEJ*O0VaSFF8cCFTUzlCUVVGQlFVRkJRVzFGWXk5Nk5bTlRYMUJ1TVRRQFVTOTNNVEk1TFdeeE9UST0=/de-ba.jpg" data-alt="Đế Bá" class="img-responsive lazyimg item-img" data-classname="img-responsive item-img"></div>
-                        <div class="title">
-                            <h3 itemprop="name">Đế Bá</h3></div>
-                    </a>
-                </div>
-                <div class="item top-9" itemscope itemtype="http://schema.org/Book"><a href="de-ton/index.html" itemprop="url"><span class="full-label"></span><div data-desk-image="http://static.truyenfull.vn/poster/n/QWJ4NzhWQUZmRkcxcTBldypGYVZaejBpX0deRmYqQCp2VmtBYUxNMm0xMW8wTHkxUU9VXVlWRTVTVUd4U1JTOVdRWzFFTlZdRVNGVmlTUzlCUVVGQlFVRkJRV3ROT0M5I1UxXX1WVFpEVVY4NVl5OTNNVEk1TFdeeE9UST0=/poster-de-ton.jpg" data-alt="Đế Tôn" class="img-responsive lazyimg item-img" data-classname="img-responsive item-img"></div><div class="title"><h3 itemprop="name">Đế Tôn</h3></div></a></div>
-                <div class="item top-10" itemscope itemtype="http://schema.org/Book">
-                    <a href="tong-tai-o-tren-toi-o-duoi/index.html" itemprop="url">
-                        <div data-desk-image="http://static.truyenfull.vn/poster/n2/QWJ4NzhWQUZmRkcxcTBldypGYVZaejBpX0deRmYqQCp2VmtBYUxNMm0xMW96TDNSKFdHcCpOMF0qUjFBQFJdVkZUVVsxU0U1VFNbJGk7VV1NWTNSRFMyMUIpWzEoWn5JMFoyeFhMVjkqTUZKRFowNDAkVEI2TV1wRk4xOHhfSEJYT0deNU1VJDI7RnA1VVckcFZXKn0kRTV9XzFWWV8wTnRSRSojX0hGNV9VQHopW0AwVUhBMU9YXnlTV3AyO0d/wdFkwUjBWV1JwWntCWSl6UTBORyRAVUYkSCl8Wkg7WCR5I0hwIU0xJHZfWCpJUkU5S1dUSlBYMHhZVlRaTU1VcEBfSFoqWlhSIyRbTnYjVSpJX34kdFQwMXpTUzFQJFVZMFoxWXRZV1JLJFZCSyNYWkdVRFZ7TVMxe1YxcCFWRzh5UlhSU056SnZUMTlIVDI1TlYyQDRXWF1dI11SI09UTlNXVTU1VlhdQlNVMTFUXUoqXzFWKk1WcE0pMDgyTF/ZSQk5WSkNaW1YzU0V4QlVdQXhfeip9JHtWWU1bUlVNMV1dV1U1cildJEZWSCpUUWkxRFJFJDFMVTV8TkhGflN6SkVaXVo1WVdeMFlXdDUjXV1JU11wcE1XUnRWR0Z9JEdKVlh6W3pNMkZMIzBwe1RHOX5WMEl6I0cqUlUxODBSXUpyO0VKV05XeEpfVlJZVTJAMlFXfTVNMF1PVkYkT1VUTnVRel18O0RKVSRURjUpMlExU1UkeyRXTmlTV3B8O/3xKelZdXTRXVTVbTVZGNjtFcFlUe1kxVlh9eVJXVjROfkJDWltGT1RGUXgpMlZ*V1UoeUxXXTFSRkJJUntSNVQxRkpTM0JHVFhCVE9GJE9ZVEpFV0VSQ1RFUkcpV1JYWX5KcVpbXUxOW1JZVFhKRVRGcERNWFtAT0ZaM1d7TkNOMUZUO3x0NlVITnRNV114X3xGViNXJCpZM11AVnxKdlZUSnskMHhNUTI1SFYwWTNNSF1OUkRCUVMzXSpTVSpa/VEUxVVMzfTNUVk16WlRSVFkwWkYkRU5KVXxOMlUzSlQ7e1U0UVtdRlNHRiEpfDl0WXpVdCl8MVFTMkU0X1YqfSN7XUMjRzl2V3xVeVpIWlI7fFpGUXxOSld8OHlae1U1JF1WIylUUTVXfk5UKUckIVZ5MTApMFZEU1ZWNE58OX5WVipUI0RKQ1N*QktRXUJpUl1aKlZ6KnlRV0p0TVZKSlR8KiFTREpaUnx0IU17QjA7VFpATVU1TUxXMVtSfHA/zUFgpeE1*W3QjREU1TV49PQ==/tong-tai-o-tren-toi-o-duoi.jpg" data-alt="Tổng Tài Ở Trên Tôi Ở Dưới" class="img-responsive lazyimg item-img" data-classname="img-responsive item-img"></div>
-                        <div class="title">
-                            <h3 itemprop="name">Tổng Tài Ở Trên Tôi Ở Dưới</h3></div>
-                    </a>
-                </div>
-                <div class="item top-11" itemscope itemtype="http://schema.org/Book"><a href="ngao-the-cuu-trong-thien/index.html" itemprop="url"><span class="full-label"></span><div data-desk-image="http://static.truyenfull.vn/poster/n/QWJ4NzhWQUZmRkcxcTBldypGYVZaejBpX0deRmYqQCp2VmtBYUxNMm0xMW8wTHkwQCNbRkBTRzF2KUdWNk5DOVdSM1syJFUodFRHcCpTUzlCUVVGQlFVRkJRV3hCVVM5UCRFcFdNVTlXO1ROQk9DOTNNVEk1TFdeeE9UST0=/ngao-the-cuu-trong-thien.jpg" data-alt="Ngạo Thế Cửu Trọng Thiên" class="img-responsive lazyimg item-img" data-classname="img-responsive item-img"></div><div class="title"><h3 itemprop="name">Ngạo Thế Cửu Trọng Thiên</h3></div></a></div>
-                <div class="item top-12" itemscope itemtype="http://schema.org/Book">
-                    <a href="dai-chua-te/index.html" itemprop="url">
-                        <div data-desk-image="http://static.truyenfull.vn/poster/n/QWJ4NzhWQUZmRkcxcTBldypGYVZaejBpX0deRmYqQCp2VmtBYUxNMm0xMW8wTHkxS1RDMXhffk4yJH5OW195OVdRWzFFTTBWW1owJEhTUzlCUVVGQlFVRkJRV3RMJHk5SCNIXVhfMDgxO1d9NFdTOTNNVEk1TFdeeE9UST0=/poster-dai-chua-te.jpg" data-alt="Đại Chúa Tể" class="img-responsive lazyimg item-img" data-classname="img-responsive item-img"></div>
-                        <div class="title">
-                            <h3 itemprop="name">Đại Chúa Tể</h3></div>
-                    </a>
-                </div>
-                <div class="item top-13" itemscope itemtype="http://schema.org/Book"><a href="pham-nhan-tu-tien/index.html" itemprop="url"><span class="full-label"></span><div data-desk-image="http://static.truyenfull.vn/poster/n/QWJ4NzhWQUZmRkcxcTBldypGYVZaejBpX0deRmYqQCp2VmtBYUxNMm0xMW8yTHkwNFgySlJXVEV0KVRKNVFTOVdUVE5GTkZdTCRbVnBTUzlCUVVGQlFVRkJRV0AwUVM5WlJURnIjVXRXVTMpMFZTOTNNVEk1TFdeeE9UST0=/pham-nhan-tu-tien.jpg" data-alt="Phàm Nhân Tu Tiên" class="img-responsive lazyimg item-img" data-classname="img-responsive item-img"></div><div class="title"><h3 itemprop="name">Phàm Nhân Tu Tiên</h3></div></a></div>
+                @count++;
+                @endforeach
+                
             </div>
         </div>
         <div class="container" id="list-index">

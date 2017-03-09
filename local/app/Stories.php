@@ -8,7 +8,7 @@ class Stories extends Model
 {
     //
     protected $table = 'stories';
-
+    
     protected $fillable = [
         'story_title',
         'story_excerpt',

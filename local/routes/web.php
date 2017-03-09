@@ -11,11 +11,13 @@
 |
 */
 
-Route::get('/','PublicController@homePage');
-Route::get('/{slug}','PublicController@storyPage');
-Auth::routes();
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/admin', 'AdminController@index');
+Auth::routes();
+Route::get('/','PublicController@homePage');
+//Route::get('/',function () {return view('welcome');});
+Route::get('/{slug}','PublicController@storyPage');
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
 Route::get('/admin/story','AdminController@storiesAction');
 Route::get('/admin/chapter','AdminController@chaptersAction');
 Route::get('/admin/category','AdminController@categoriesAction');

@@ -89,18 +89,23 @@ class PublicController extends Controller
     public function homePage()
     {
         $terms = new Terms;
+        $hot_stories = DB::table('stories')
+            ->orderBy('view_month','desc')
+            ->offset(0)
+            ->limit(13)
+            ->get();
         $last_chapters = DB::table('stories')
             ->join('chapters', 'stories.last_chapter', '=', 'chapters.chapter_id')
             ->select('stories.id','stories.story_title','chapters.chapter_serial','chapters.chapter_title','stories.story_thumbnail','stories.story_slug','chapters.chapter_id')
             ->orderBy('stories.chapter_update_at','desc')
             ->offset(0)
-            ->limit(25)
+            ->limit(13)
             ->get();
         foreach ($last_chapters as $last_chapter ) {
             $last_chapter->term = $terms::listTermbyStory($last_chapter->id);
         }
         //echo $last_chapters;
-        return view('public/index')->with("last_chapters", $last_chapters);
+        return view('public/index')->with("last_chapters", $last_chapters)->with("hot_stories",$hot_stories);
     }
 
     public function storyPage($slug)
