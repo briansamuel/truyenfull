@@ -99,7 +99,7 @@ class PublicController extends Controller
             ->select('stories.id','stories.story_title','chapters.chapter_serial','chapters.chapter_title','stories.story_thumbnail','stories.story_slug','chapters.chapter_id')
             ->orderBy('stories.chapter_update_at','desc')
             ->offset(0)
-            ->limit(13)
+            ->limit(25)
             ->get();
         foreach ($last_chapters as $last_chapter ) {
             $last_chapter->term = $terms::listTermbyStory($last_chapter->id);
