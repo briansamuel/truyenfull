@@ -19,6 +19,7 @@ class CreateChaptersTable extends Migration
             $table->text('chapter_title');
             $table->text('chapter_content');
             $table->text('chapter_status');
+            $table->text('chapter_slug');
             $table->integer('story_parent')->default(0);
             $table->integer('view')->default(0);
             $table->timestamps();
