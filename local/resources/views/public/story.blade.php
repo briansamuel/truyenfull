@@ -2,7 +2,7 @@
 
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# book: http://ogp.me/ns/book# profile: http://ogp.me/ns/profile#">
     <meta charset="UTF-8">
-    <base href="http://localhost/truyenfull/" target="_blank">
+    <base href="http://localhost/truyenfull/">
     <title>{{$story->story_title}}</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <meta name="description" content="{{$story->story_excerpt}}">
@@ -243,7 +243,7 @@
                 </div>
             </div>
             <div class="visible-md-block visible-lg-block col-md-3 text-center col-truyen-side">
-                <!-- Ads Chỗ này đặt quảng cáo -->
+                <!-- Ads Chỗ này đặt quảng cáo -->2
                 <div class="list list-truyen col-xs-12">
                     <div class="title-list">
                         <h4>Truyện cùng tác giả</h4></div>
@@ -364,7 +364,7 @@
     <script type="text/javascript" async="" src="https://apis.google.com/js/platform.js" gapi_processed="true"></script>
     <script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js"></script>
     <script async="" src="http://static.truyenfull.vn/js/analytics.js"></script>
-    <script src="http://static.truyenfull.vn/min/g/mainjs-1002.js"></script>
+    <script src="js/mainjs-1002.js"></script>
     <!--<script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw.js" async></script>-->
     <!--<script type="text/javascript">if($.browser.mobile){	(function() {	var s = document.createElement('script');	s.type = 'text/javascript';	s.async = true;	s.src = 'https://connect.facebook.net/en_US/fbadnw.js';	var x = document.getElementsByTagName('script')[0];	x.parentNode.insertBefore(s, x);	})();
 }</script>-->
