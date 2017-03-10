@@ -173,15 +173,18 @@
                 </select>
             </div>
             <div class="index-intro">
-                @foreach($hot_stories as $indexKey => $hot_storie)
-                <div class="item top-{{$indexKey+1}}" itemscope itemtype="http://schema.org/Book">
+                @php 
+                count = 1;
+                @endphp
+                @foreach($hot_stories as $hot_storie)
+                <div class="item top-{{$count}}" itemscope itemtype="http://schema.org/Book">
                     <a href="{{$hot_storie->story_slug}}" itemprop="url">
                         <div data-desk-image="{{$hot_storie->story_thumbnail}}" data-alt="{{$hot_storie->story_title}}" class="img-responsive lazyimg item-img" data-classname="img-responsive item-img"></div>
                         <div class="title">
                             <h3 itemprop="name">{{$hot_storie->story_title}}</h3></div>
                     </a>
                 </div>
-                
+                @count++;
                 @endforeach
                 
             </div>
