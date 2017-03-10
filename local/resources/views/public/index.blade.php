@@ -7,7 +7,13 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <meta name="description" content="Đọc truyện online, đọc truyện chữ, truyện hay, truyện full. Truyện Full luôn tổng hợp và cập nhật các chương truyện một cách nhanh nhất.">
     <meta name="keywords" content="doc truyen, doc truyen online, truyen hay, truyen chu">
+<<<<<<< HEAD
     <link rel="canonical" href="">
+=======
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
+    <link rel="canonical" href="http://truyenfull.vn/">
+>>>>>>> origin/master
     <link rel="stylesheet" type="text/css" media="all" href="http://static.truyenfull.vn/min/g/maincss-1602-5.css">
     <link rel="search" type="application/opensearchdescription+xml" href="http://static.truyenfull.vn/xml/opensearch.xml" title="Search">
     <link rel="shortcut icon" type="image/x-icon" href="http://static.truyenfull.vn/favicon.ico">
@@ -500,15 +506,25 @@
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Hiện menu</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+<<<<<<< HEAD
                     <h1><a class="header-logo" href="" title="doc truyen">doc truyen</a></h1></div>
+=======
+                    <h1><a class="header-logo" href="http://truyenfull.vn/" title="doc truyen">doc truyen</a></h1></div>
+>>>>>>> origin/master
                 <div class="navbar-collapse collapse" itemscope="" itemtype="http://schema.org/WebSite">
                     <meta itemprop="url" content="http://truyenfull.vn">
                     <ul class="control nav navbar-nav ">
                         <li class="dropdown"><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-list"></span> Danh sách <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
+<<<<<<< HEAD
                                 <li><a href="danh-sach/truyen-moi/" title="Truyện mới cập nhật">Truyện mới cập nhật</a></li>
                                 <li><a href="danh-sach/truyen-hot/" title="Truyện Hot">Truyện Hot</a></li>
                                 <li><a href="danh-sach/truyen-full/" title="Truyện Full">Truyện Full</a></li>
+=======
+                                <li><a href="http://truyenfull.vn/danh-sach/truyen-moi/" title="Truyện mới cập nhật">Truyện mới cập nhật</a></li>
+                                <li><a href="http://truyenfull.vn/danh-sach/truyen-hot/" title="Truyện Hot">Truyện Hot</a></li>
+                                <li><a href="http://truyenfull.vn/danh-sach/truyen-full/" title="Truyện Full">Truyện Full</a></li>
+>>>>>>> origin/master
                             </ul>
                         </li>
                         <li class="dropdown"><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-list"></span> Thể loại <span class="caret"></span></a>
@@ -516,6 +532,7 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <ul class="dropdown-menu">
+<<<<<<< HEAD
                                             <li><a href="the-loai/tien-hiep/" title="Truyện Tiên Hiệp">Tiên Hiệp</a></li>
                                             <li><a href="the-loai/kiem-hiep/" title="Truyện Kiếm Hiệp">Kiếm Hiệp</a></li>
                                             <li><a href="the-loai/ngon-tinh/" title="Truyện Ngôn Tình">Ngôn Tình</a></li>
@@ -529,10 +546,26 @@
                                             <li><a href="the-loai/quan-su/" title="Truyện Quân Sự">Quân Sự</a></li>
                                             <li><a href="the-loai/lich-su/" title="Truyện Lịch Sử">Lịch Sử</a></li>
                                             <li><a href="the-loai/xuyen-khong/" title="Truyện Xuyên Không">Xuyên Không</a></li>
+=======
+                                            <li><a href="http://truyenfull.vn/the-loai/tien-hiep/" title="Truyện Tiên Hiệp">Tiên Hiệp</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/kiem-hiep/" title="Truyện Kiếm Hiệp">Kiếm Hiệp</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/ngon-tinh/" title="Truyện Ngôn Tình">Ngôn Tình</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/do-thi/" title="Truyện Đô Thị">Đô Thị</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/quan-truong/" title="Truyện Quan Trường">Quan Trường</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/vong-du/" title="Truyện Võng Du">Võng Du</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/khoa-huyen/" title="Truyện Khoa Huyễn">Khoa Huyễn</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/huyen-huyen/" title="Truyện Huyền Huyễn">Huyền Huyễn</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/di-gioi/" title="Truyện Dị Giới">Dị Giới</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/di-nang/" title="Truyện Dị Năng">Dị Năng</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/quan-su/" title="Truyện Quân Sự">Quân Sự</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/lich-su/" title="Truyện Lịch Sử">Lịch Sử</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/xuyen-khong/" title="Truyện Xuyên Không">Xuyên Không</a></li>
+>>>>>>> origin/master
                                         </ul>
                                     </div>
                                     <div class="col-md-4">
                                         <ul class="dropdown-menu">
+<<<<<<< HEAD
                                             <li><a href="the-loai/trong-sinh/" title="Truyện Trọng Sinh">Trọng Sinh</a></li>
                                             <li><a href="the-loai/trinh-tham/" title="Truyện Trinh Thám">Trinh Thám</a></li>
                                             <li><a href="the-loai/tham-hiem/" title="Truyện Thám Hiểm">Thám Hiểm</a></li>
@@ -546,10 +579,26 @@
                                             <li><a href="the-loai/dong-phuong/" title="Truyện Đông Phương">Đông Phương</a></li>
                                             <li><a href="the-loai/dam-my/" title="Truyện Đam Mỹ">Đam Mỹ</a></li>
                                             <li><a href="the-loai/bach-hop/" title="Truyện Bách Hợp">Bách Hợp</a></li>
+=======
+                                            <li><a href="http://truyenfull.vn/the-loai/trong-sinh/" title="Truyện Trọng Sinh">Trọng Sinh</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/trinh-tham/" title="Truyện Trinh Thám">Trinh Thám</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/tham-hiem/" title="Truyện Thám Hiểm">Thám Hiểm</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/linh-di/" title="Truyện Linh Dị">Linh Dị</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/sac/" title="Truyện Sắc">Sắc</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/nguoc/" title="Truyện Ngược">Ngược</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/sung/" title="Truyện Sủng">Sủng</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/cung-dau/" title="Truyện Cung Đấu">Cung Đấu</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/nu-cuong/" title="Truyện Nữ Cường">Nữ Cường</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/gia-dau/" title="Truyện Gia Đấu">Gia Đấu</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/dong-phuong/" title="Truyện Đông Phương">Đông Phương</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/dam-my/" title="Truyện Đam Mỹ">Đam Mỹ</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/bach-hop/" title="Truyện Bách Hợp">Bách Hợp</a></li>
+>>>>>>> origin/master
                                         </ul>
                                     </div>
                                     <div class="col-md-4">
                                         <ul class="dropdown-menu">
+<<<<<<< HEAD
                                             <li><a href="the-loai/hai-huoc/" title="Truyện Hài Hước">Hài Hước</a></li>
                                             <li><a href="the-loai/dien-van/" title="Truyện Điền Văn">Điền Văn</a></li>
                                             <li><a href="the-loai/co-dai/" title="Truyện Cổ Đại">Cổ Đại</a></li>
@@ -561,15 +610,34 @@
                                             <li><a href="the-loai/van-hoc-viet-nam/" title="Truyện Văn học Việt Nam">Văn học Việt Nam</a></li>
                                             <li><a href="the-loai/doan-van/" title="Truyện Đoản Văn">Đoản Văn</a></li>
                                             <li><a href="the-loai/khac/" title="Truyện Khác">Khác</a></li>
+=======
+                                            <li><a href="http://truyenfull.vn/the-loai/hai-huoc/" title="Truyện Hài Hước">Hài Hước</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/dien-van/" title="Truyện Điền Văn">Điền Văn</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/co-dai/" title="Truyện Cổ Đại">Cổ Đại</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/mat-the/" title="Truyện Mạt Thế">Mạt Thế</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/truyen-teen/" title="Truyện Truyện Teen">Truyện Teen</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/tieu-thuyet-phuong-tay/" title="Truyện Tiểu Thuyết Phương Tây">Tiểu Thuyết Phương Tây</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/nu-phu/" title="Truyện Nữ Phụ">Nữ Phụ</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/light-novel/" title="Truyện Light Novel">Light Novel</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/van-hoc-viet-nam/" title="Truyện Văn học Việt Nam">Văn học Việt Nam</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/doan-van/" title="Truyện Đoản Văn">Đoản Văn</a></li>
+                                            <li><a href="http://truyenfull.vn/the-loai/khac/" title="Truyện Khác">Khác</a></li>
+>>>>>>> origin/master
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </li>
                     </ul>
+<<<<<<< HEAD
                     <form class="navbar-form navbar-right" action="tim-kiem/" role="search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
                         <div class="input-group search-holder">
                             <meta itemprop="target" content="tim-kiem/?tukhoa={tukhoa}">
+=======
+                    <form class="navbar-form navbar-right" action="http://truyenfull.vn/tim-kiem/" role="search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+                        <div class="input-group search-holder">
+                            <meta itemprop="target" content="http://truyenfull.vn/tim-kiem/?tukhoa={tukhoa}">
+>>>>>>> origin/master
                             <input class="form-control" id="search-input" type="search" name="tukhoa" placeholder="Tìm kiếm..." value="" itemprop="query-input" required="">
                             <div class="input-group-btn">
                                 <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
@@ -596,7 +664,11 @@
         </div>
         <div class="container visible-md-block visible-lg-block" id="intro-index">
             <div class="title-list">
+<<<<<<< HEAD
                 <h2><a href="danh-sach/truyen-hot/" title="Truyện hot">Truyện hot</a></h2><a href="danh-sach/truyen-hot/" title="Truyện hot"><span class="glyphicon glyphicon-fire"></span></a>
+=======
+                <h2><a href="http://truyenfull.vn/danh-sach/truyen-hot/" title="Truyện hot">Truyện hot</a></h2><a href="http://truyenfull.vn/danh-sach/truyen-hot/" title="Truyện hot"><span class="glyphicon glyphicon-fire"></span></a>
+>>>>>>> origin/master
                 <select id="hot-select" class="form-control new-select">
                     <option value="all">Tất cả</option>
                     <option value="1">Tiên Hiệp</option>
@@ -658,6 +730,7 @@
                     <h2>Truyện bạn đã đọc</h2></div>
                 <div class="row">
                     <div class="col-xs-7 col-sm-6 col-md-8 col-title-history"><span class="glyphicon glyphicon-chevron-right"></span>
+<<<<<<< HEAD
                         <h3 itemprop="name"><a href="nga-duc-phong-thien/">Ngã Dục Phong Thiên</a></h3></div>
                     <div class="col-xs-5 col-sm-6 col-md-4 text-info"><a href="nga-duc-phong-thien/chuong-1789/">Đọc tiếp <span class="chapter-text"><span>Chương </span></span>1789</a></div>
                 </div>
@@ -670,11 +743,29 @@
                     <div class="col-xs-7 col-sm-6 col-md-8 col-title-history"><span class="glyphicon glyphicon-chevron-right"></span>
                         <h3 itemprop="name"><a href="nhat-niem-vinh-hang/">Nhất Niệm Vĩnh Hằng</a></h3></div>
                     <div class="col-xs-5 col-sm-6 col-md-4 text-info"><a href="nhat-niem-vinh-hang/chuong-158/">Đọc tiếp <span class="chapter-text"><span>Chương </span></span>158</a></div>
+=======
+                        <h3 itemprop="name"><a href="http://truyenfull.vn/nga-duc-phong-thien/">Ngã Dục Phong Thiên</a></h3></div>
+                    <div class="col-xs-5 col-sm-6 col-md-4 text-info"><a href="http://truyenfull.vn/nga-duc-phong-thien/chuong-1789/">Đọc tiếp <span class="chapter-text"><span>Chương </span></span>1789</a></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-7 col-sm-6 col-md-8 col-title-history"><span class="glyphicon glyphicon-chevron-right"></span>
+                        <h3 itemprop="name"><a href="http://truyenfull.vn/da-sac-bien-duyen/">Dạ Sắc Biên Duyên</a></h3></div>
+                    <div class="col-xs-5 col-sm-6 col-md-4 text-info"><a href="http://truyenfull.vn/da-sac-bien-duyen/quyen-1-chuong-5/">Đọc tiếp <span class="book-text"><span>Quyển </span></span>1 - <span class="chapter-text"><span>Chương </span></span>5</a></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-7 col-sm-6 col-md-8 col-title-history"><span class="glyphicon glyphicon-chevron-right"></span>
+                        <h3 itemprop="name"><a href="http://truyenfull.vn/nhat-niem-vinh-hang/">Nhất Niệm Vĩnh Hằng</a></h3></div>
+                    <div class="col-xs-5 col-sm-6 col-md-4 text-info"><a href="http://truyenfull.vn/nhat-niem-vinh-hang/chuong-158/">Đọc tiếp <span class="chapter-text"><span>Chương </span></span>158</a></div>
+>>>>>>> origin/master
                 </div>
             </div>
             <div class="list-truyen col-xs-12 col-sm-12 col-md-8 col-truyen-main text-center">
                 <div class="hidden-xs hidden-sm hidden-md">
+<<<<<<< HEAD
                     <iframe sandbox="allow-forms allow-same-origin allow-scripts allow-popups allow-pointer-lock" style="overflow:hidden" src="ureka/geniee/geniee-728x90-2.html" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+=======
+                    <iframe sandbox="allow-forms allow-same-origin allow-scripts allow-popups allow-pointer-lock" style="overflow:hidden" src="http://truyenfull.vn/ureka/geniee/geniee-728x90-2.html" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+>>>>>>> origin/master
                 </div>
                 <div class="hidden-sm hidden-md hidden-lg">
                     <div class="ads-320-100-3g"></div>
@@ -682,7 +773,11 @@
             </div>
             <div class="list list-truyen list-new col-xs-12 col-sm-12 col-md-8 col-truyen-main">
                 <div class="title-list">
+<<<<<<< HEAD
                     <h2><a href="danh-sach/truyen-moi/" title="Truyện mới">Truyện mới cập nhật</a></h2><a href="danh-sach/truyen-moi/" title="Truyện mới"><span class="glyphicon glyphicon-menu-right"></span></a>
+=======
+                    <h2><a href="http://truyenfull.vn/danh-sach/truyen-moi/" title="Truyện mới">Truyện mới cập nhật</a></h2><a href="http://truyenfull.vn/danh-sach/truyen-moi/" title="Truyện mới"><span class="glyphicon glyphicon-menu-right"></span></a>
+>>>>>>> origin/master
                     <select id="new-select" class="form-control new-select">
                         <option value="all">Tất cả</option>
                         <option value="1">Tiên Hiệp</option>
@@ -741,6 +836,7 @@
                     <div class="title-list">
                         <h4>Thể loại truyện</h4></div>
                     <div class="row">
+<<<<<<< HEAD
                         <div class="col-xs-6"><a href="the-loai/tien-hiep" title="Truyện Tiên Hiệp">Tiên Hiệp</a></div>
                         <div class="col-xs-6"><a href="the-loai/kiem-hiep" title="Truyện Kiếm Hiệp">Kiếm Hiệp</a></div>
                         <div class="col-xs-6"><a href="the-loai/ngon-tinh" title="Truyện Ngôn Tình">Ngôn Tình</a></div>
@@ -781,6 +877,48 @@
                     </div>
                 </div>
                 <iframe sandbox="allow-forms allow-same-origin allow-scripts allow-popups allow-pointer-lock" style="overflow:hidden" src="ureka/geniee/geniee-300x600.html" width="300" height="600" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+=======
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/tien-hiep/" title="Truyện Tiên Hiệp">Tiên Hiệp</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/kiem-hiep/" title="Truyện Kiếm Hiệp">Kiếm Hiệp</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/ngon-tinh/" title="Truyện Ngôn Tình">Ngôn Tình</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/do-thi/" title="Truyện Đô Thị">Đô Thị</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/quan-truong/" title="Truyện Quan Trường">Quan Trường</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/vong-du/" title="Truyện Võng Du">Võng Du</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/khoa-huyen/" title="Truyện Khoa Huyễn">Khoa Huyễn</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/huyen-huyen/" title="Truyện Huyền Huyễn">Huyền Huyễn</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/di-gioi/" title="Truyện Dị Giới">Dị Giới</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/di-nang/" title="Truyện Dị Năng">Dị Năng</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/quan-su/" title="Truyện Quân Sự">Quân Sự</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/lich-su/" title="Truyện Lịch Sử">Lịch Sử</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/xuyen-khong/" title="Truyện Xuyên Không">Xuyên Không</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/trong-sinh/" title="Truyện Trọng Sinh">Trọng Sinh</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/trinh-tham/" title="Truyện Trinh Thám">Trinh Thám</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/tham-hiem/" title="Truyện Thám Hiểm">Thám Hiểm</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/linh-di/" title="Truyện Linh Dị">Linh Dị</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/sac/" title="Truyện Sắc">Sắc</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/nguoc/" title="Truyện Ngược">Ngược</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/sung/" title="Truyện Sủng">Sủng</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/cung-dau/" title="Truyện Cung Đấu">Cung Đấu</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/nu-cuong/" title="Truyện Nữ Cường">Nữ Cường</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/gia-dau/" title="Truyện Gia Đấu">Gia Đấu</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/dong-phuong/" title="Truyện Đông Phương">Đông Phương</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/dam-my/" title="Truyện Đam Mỹ">Đam Mỹ</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/bach-hop/" title="Truyện Bách Hợp">Bách Hợp</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/hai-huoc/" title="Truyện Hài Hước">Hài Hước</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/dien-van/" title="Truyện Điền Văn">Điền Văn</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/co-dai/" title="Truyện Cổ Đại">Cổ Đại</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/mat-the/" title="Truyện Mạt Thế">Mạt Thế</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/truyen-teen/" title="Truyện Truyện Teen">Truyện Teen</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/tieu-thuyet-phuong-tay/" title="Truyện Tiểu Thuyết Phương Tây">Tiểu Thuyết Phương Tây</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/nu-phu/" title="Truyện Nữ Phụ">Nữ Phụ</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/light-novel/" title="Truyện Light Novel">Light Novel</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/van-hoc-viet-nam/" title="Truyện Văn học Việt Nam">Văn học Việt Nam</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/doan-van/" title="Truyện Đoản Văn">Đoản Văn</a></div>
+                        <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/khac/" title="Truyện Khác">Khác</a></div>
+                    </div>
+                </div>
+                <iframe sandbox="allow-forms allow-same-origin allow-scripts allow-popups allow-pointer-lock" style="overflow:hidden" src="http://truyenfull.vn/ureka/geniee/geniee-300x600.html" width="300" height="600" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+>>>>>>> origin/master
             </div>
             <div class="row text-center">
                 <div class="hidden-md hidden-lg text-center w320">
@@ -800,7 +938,11 @@
         <div class="container" id="truyen-slide">
             <div class="list list-thumbnail col-xs-12">
                 <div class="title-list">
+<<<<<<< HEAD
                     <h2><a href="danh-sach/truyen-full/" title="Truyện full">Truyện đã hoàn thành</a></h2><a href="danh-sach/truyen-full/" title="Truyện full"><span class="glyphicon glyphicon-menu-right"></span></a></div>
+=======
+                    <h2><a href="http://truyenfull.vn/danh-sach/truyen-full/" title="Truyện full">Truyện đã hoàn thành</a></h2><a href="http://truyenfull.vn/danh-sach/truyen-full/" title="Truyện full"><span class="glyphicon glyphicon-menu-right"></span></a></div>
+>>>>>>> origin/master
    
                 <div class="row">
                     @foreach($full_stories as $index => $full_story)
@@ -817,11 +959,19 @@
     </div>
     <div class="footer">
         <div class="container">
+<<<<<<< HEAD
             <div class="hidden-xs col-sm-5"><strong>Truyện Full</strong> - <a href="http://truyenfull.vn" title="Đọc truyện online">Đọc truyện</a> online, <a href="http://truyenfull.vn" title="Đọc truyện chữ">đọc truyện</a> chữ, <a href="http://truyenfull.vn" title="Truyện hay">truyện hay</a>. Website luôn cập nhật những bộ <a href="danh-sach/truyen-moi/" title="Truyện mới">truyện mới</a> thuộc các thể loại đặc sắc như <a href="the-loai/tien-hiep/" title="Truyện tiên hiệp">truyện tiên hiệp</a>, <a href="the-loai/kiem-hiep/" title="Truyện kiếm hiệp">truyện kiếm hiệp</a>, hay <a href="the-loai/ngon-tinh/" title="Truyện ngôn tình">truyện ngôn tình</a> một cách nhanh nhất. Hỗ trợ mọi thiết bị như di động và máy tính bảng.</div>
             <ul class="col-xs-12 col-sm-7 list-unstyled">
                 <li class="text-right pull-right"><a href="contact/" title="Contact">Contact</a> - <a href="tos/" title="Terms of Service">ToS</a> - <a href="sitemap.xml" title="Sitemap" target="_blank">Sitemap</a><a class="backtop" href="#wrap" rel="nofollow"><span class="glyphicon glyphicon-upload"></span></a>
                     <!--<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BMYGJSKTRBZXU" title="Donate - Ủng hộ" target="_blank" rel="nofollow">Donate</a>--></li>
                 <li class="hidden-xs tag-list"><a href="ma-thien-ky/" title="ma thien ky">ma thien ky</a> <a href="tien-nghich/" title="tien nghich">tien nghich</a> <a href="thieu-gia-ac-ma-dung-hon-toi/" title="thieu gia ac ma dung hon toi">thieu gia ac ma dung hon toi</a> <a href="the-loai/dam-my/" title="truyen dam my">truyen dam my</a> <a href="chua-te-chi-vuong/" title="chua te chi vuong">chua te chi vuong</a> <a href="tam-sinh-tam-the-thap-ly-dao-hoa/" title="tam sinh tam the thap ly dao hoa">tam sinh tam the thap ly dao hoa</a> <a href="linh-vu-thien-ha/" title="linh vu thien ha">linh vu thien ha</a> <a href="quan-khi/" title="quan khi">quan khi</a> <a href="dai-thieu-gia-em-lay-cau/" title="dai thieu gia em lay cau">dai thieu gia em lay cau</a> <a href="doc-ton-tam-gioi/" title="doc ton tam gioi">doc ton tam gioi</a> <a href="quan-thuat/" title="quan thuat">quan thuat</a> <a href="quan-sach/" title="quan sach">quan sach</a> <a href="quan-bang/" title="quan bang">quan bang</a> <a href="tru-tien/" title="tru tien">tru tien</a> <a href="lac-hong-ky/" title="lac hong ky">lac hong ky</a></li>
+=======
+            <div class="hidden-xs col-sm-5"><strong>Truyện Full</strong> - <a href="http://truyenfull.vn" title="Đọc truyện online">Đọc truyện</a> online, <a href="http://truyenfull.vn" title="Đọc truyện chữ">đọc truyện</a> chữ, <a href="http://truyenfull.vn" title="Truyện hay">truyện hay</a>. Website luôn cập nhật những bộ <a href="http://truyenfull.vn/danh-sach/truyen-moi/" title="Truyện mới">truyện mới</a> thuộc các thể loại đặc sắc như <a href="http://truyenfull.vn/the-loai/tien-hiep/" title="Truyện tiên hiệp">truyện tiên hiệp</a>, <a href="http://truyenfull.vn/the-loai/kiem-hiep/" title="Truyện kiếm hiệp">truyện kiếm hiệp</a>, hay <a href="http://truyenfull.vn/the-loai/ngon-tinh/" title="Truyện ngôn tình">truyện ngôn tình</a> một cách nhanh nhất. Hỗ trợ mọi thiết bị như di động và máy tính bảng.</div>
+            <ul class="col-xs-12 col-sm-7 list-unstyled">
+                <li class="text-right pull-right"><a href="http://truyenfull.vn/contact/" title="Contact">Contact</a> - <a href="http://truyenfull.vn/tos/" title="Terms of Service">ToS</a> - <a href="http://truyenfull.vn/sitemap.xml" title="Sitemap" target="_blank">Sitemap</a><a class="backtop" href="#wrap" rel="nofollow"><span class="glyphicon glyphicon-upload"></span></a>
+                    <!--<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BMYGJSKTRBZXU" title="Donate - Ủng hộ" target="_blank" rel="nofollow">Donate</a>--></li>
+                <li class="hidden-xs tag-list"><a href="http://truyenfull.vn/ma-thien-ky/" title="ma thien ky">ma thien ky</a> <a href="http://truyenfull.vn/tien-nghich/" title="tien nghich">tien nghich</a> <a href="http://truyenfull.vn/thieu-gia-ac-ma-dung-hon-toi/" title="thieu gia ac ma dung hon toi">thieu gia ac ma dung hon toi</a> <a href="http://truyenfull.vn/the-loai/dam-my/" title="truyen dam my">truyen dam my</a> <a href="http://truyenfull.vn/chua-te-chi-vuong/" title="chua te chi vuong">chua te chi vuong</a> <a href="http://truyenfull.vn/tam-sinh-tam-the-thap-ly-dao-hoa/" title="tam sinh tam the thap ly dao hoa">tam sinh tam the thap ly dao hoa</a> <a href="http://truyenfull.vn/linh-vu-thien-ha/" title="linh vu thien ha">linh vu thien ha</a> <a href="http://truyenfull.vn/quan-khi/" title="quan khi">quan khi</a> <a href="http://truyenfull.vn/dai-thieu-gia-em-lay-cau/" title="dai thieu gia em lay cau">dai thieu gia em lay cau</a> <a href="http://truyenfull.vn/doc-ton-tam-gioi/" title="doc ton tam gioi">doc ton tam gioi</a> <a href="http://truyenfull.vn/quan-thuat/" title="quan thuat">quan thuat</a> <a href="http://truyenfull.vn/quan-sach/" title="quan sach">quan sach</a> <a href="http://truyenfull.vn/quan-bang/" title="quan bang">quan bang</a> <a href="http://truyenfull.vn/tru-tien/" title="tru tien">tru tien</a> <a href="http://truyenfull.vn/lac-hong-ky/" title="lac hong ky">lac hong ky</a></li>
+>>>>>>> origin/master
             </ul>
         </div>
     </div>

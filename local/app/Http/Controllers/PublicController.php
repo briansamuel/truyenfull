@@ -154,6 +154,7 @@ class PublicController extends Controller
         //echo $last_chapters;
         
     }
+<<<<<<< HEAD
 
     public function categoryPage($slug)
     {
@@ -174,6 +175,8 @@ class PublicController extends Controller
         
     }
 
+=======
+>>>>>>> origin/master
     public function testPage()
     {
         $url = "http://static.truyenfull.vn/poster/n2/QWJ4NzhWQUZmRkcxcTBldypGYVZaejBpX0deRmYqQCp2VmtBYUxNMm0xMW96TDBSfFZGTjBOflZSX0RWU1d8NUVVeypCWTBWTFVFUnRTMDlaJF1BM1F6KnZXRl1VVUUqSlR*SltPRCpMKTBwS05GOUtNMVJOUlUwMVpEJHAjVEJCU1UkM1IxcHhXWyg1JFs0NVMwOXlaejEzTX5FMUxXXnpNfkk9/hai-ba-chuyen-o-duoc-vuong-coc.jpg";
