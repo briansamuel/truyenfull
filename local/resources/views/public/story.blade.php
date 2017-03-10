@@ -2,7 +2,11 @@
 
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# book: http://ogp.me/ns/book# profile: http://ogp.me/ns/profile#">
     <meta charset="UTF-8">
+<<<<<<< HEAD
     <base href="http://localhost/truyenfull/">
+=======
+    <base href="http://localhost/truyenfull/" >
+>>>>>>> origin/master
     <title>{{$story->story_title}}</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <meta name="description" content="{{$story->story_excerpt}}">
@@ -364,12 +368,16 @@
     <script type="text/javascript" async="" src="https://apis.google.com/js/platform.js" gapi_processed="true"></script>
     <script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js"></script>
     <script async="" src="http://static.truyenfull.vn/js/analytics.js"></script>
+<<<<<<< HEAD
     <script src="js/mainjs-1002.js"></script>
     <!--<script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw.js" async></script>-->
     <!--<script type="text/javascript">if($.browser.mobile){	(function() {	var s = document.createElement('script');	s.type = 'text/javascript';	s.async = true;	s.src = 'https://connect.facebook.net/en_US/fbadnw.js';	var x = document.getElementsByTagName('script')[0];	x.parentNode.insertBefore(s, x);	})();
 }</script>-->
+=======
+    <script src="http://static.truyenfull.vn/min/g/mainjs-1002.js"></script>
+
+>>>>>>> origin/master
     <div id="checkfbads" data-loaded="0"></div>
-    <!--<div id="aff"></div>-->
     <div id="ifvp"></div>
     <iframe name="oauth2relay774968780" id="oauth2relay774968780" src="https://accounts.google.com/o/oauth2/postmessageRelay?parent=http%3A%2F%2Ftruyenfull.vn&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.vi.ICdbHCvUVWs.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCOlq6Rg1KwxYCoXjb-XA47_Gvdbgw#rpctoken=806648466&amp;forcesecure=1" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe>
     <div id="fb-root" class=" fb_reset">

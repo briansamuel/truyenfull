@@ -50,6 +50,7 @@ class PublicController extends Controller
     public function show($id)
     {
         //
+
     }
 
     /**
@@ -153,6 +154,29 @@ class PublicController extends Controller
         //echo $last_chapters;
         
     }
+<<<<<<< HEAD
+
+    public function categoryPage($slug)
+    {
+        
+        $stories = DB::table('stories')
+         ->join('chapters', 'stories.last_chapter', '=', 'chapters.chapter_id')
+        ->join('term_relationships', 'stories.id', '=', 'term_relationships.story_id')
+        ->join('terms', 'terms.term_id', '=', 'term_relationships.term_id')
+        ->where('terms.term_slug','tien-hiep')
+        ->paginate(25);
+
+        foreach ($stories as $key => $story) {
+            $thumb = $story->story_thumbnail;
+            $story->story_thumbnail = "http://localhost/truyenfull/static/cropimage?url=".$thumb;
+        }
+        return view('public/term')->with("stories", $stories);
+        //echo $last_chapters;
+        
+    }
+
+=======
+>>>>>>> origin/master
     public function testPage()
     {
         $url = "http://static.truyenfull.vn/poster/n2/QWJ4NzhWQUZmRkcxcTBldypGYVZaejBpX0deRmYqQCp2VmtBYUxNMm0xMW96TDBSfFZGTjBOflZSX0RWU1d8NUVVeypCWTBWTFVFUnRTMDlaJF1BM1F6KnZXRl1VVUUqSlR*SltPRCpMKTBwS05GOUtNMVJOUlUwMVpEJHAjVEJCU1UkM1IxcHhXWyg1JFs0NVMwOXlaejEzTX5FMUxXXnpNfkk9/hai-ba-chuyen-o-duoc-vuong-coc.jpg";

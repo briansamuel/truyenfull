@@ -12,14 +12,24 @@
 */
 
 Route::get('/','PublicController@homePage');
+<<<<<<< HEAD
+Route::get('/{slug}/chuong-{serial}','PublicController@chapterPage');
+Route::get('/danh-sach/truyen-full','PublicController@termPage');
+Route::get('/the-loai/{slug}/','PublicController@categoryPage');
+=======
 Route::get('/{slug}','PublicController@storyPage');
 Route::get('/{slug}/chuong-{serial}','PublicController@chapterPage');
 Route::get('/danh-sach/truyen-full','PublicController@termPage');
+>>>>>>> origin/master
 Route::get('/static/cropimage','PublicController@cropPage');
 Auth::routes();
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/admin', 'AdminController@index');
+<<<<<<< HEAD
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::get('/{slug}','PublicController@storyPage');
+=======
 
+>>>>>>> origin/master
 Route::get('/admin/story','AdminController@storiesAction');
 Route::get('/admin/chapter','AdminController@chaptersAction');
 Route::get('/admin/category','AdminController@categoriesAction');

@@ -198,8 +198,9 @@ class AdminController extends Controller
             $title = '';
             $keywords = '';
             $description = '';
+            $name =  $element->plaintext;
             $terms = new Terms;
-            $terms->term_name = $element->plaintext;
+            $terms->term_name = $name;
             $html2 = $this->CurlHTML($element->href);
             $html2 = str_get_html($html2);
             foreach($html2->find('meta[name=keywords]') as $element)
@@ -211,7 +212,7 @@ class AdminController extends Controller
             $terms->term_title = $title;
             $terms->term_keyword = $keywords;
             $terms->term_description = $description;
-            $terms->term_slug = str_slug($element->plaintext);
+            $terms->term_slug = str_slug($name);
             $terms->term_type = 'category';
             $terms->save();
         }
