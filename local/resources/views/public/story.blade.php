@@ -1,14 +1,14 @@
-<!DOCTYPE html>
 <html lang="vi" class="csstransforms3d">
 
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# book: http://ogp.me/ns/book# profile: http://ogp.me/ns/profile#">
     <meta charset="UTF-8">
-    <base href="http://localhost/truyenfull/">
+    <base href="http://localhost/truyenfull/" target="_blank">
     <title>{{$story->story_title}}</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <meta name="description" content="{{$story->story_excerpt}}">
     <meta name="keywords" content="{{$story->story_keyword}}">
-
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
     <link rel="canonical" href="{{$story->story_slug}}/">
     <link rel="stylesheet" type="text/css" media="all" href="http://static.truyenfull.vn/min/g/maincss-1602-5.css">
     <link rel="search" type="application/opensearchdescription+xml" href="http://static.truyenfull.vn/xml/opensearch.xml" title="Search">
@@ -32,7 +32,7 @@
     <meta property="og:type" content="book">
     <meta property="og:title" content="{{$story->story_title}}">
     <meta property="og:image" content="http://static.truyenfull.vn/poster/n2/QWJ4NzhWQUZmRkcxcTBldypGYVZaejBpX0deRmYqQCp2VmtBYUxNMm0xMW96TDBaQClHeHJXV1JNTn5GfE5dVlVVR3R4WnteeFl8dFVXVVooWntGUl96WXRNXV1XUnx4fk5WOVRfMjFSVUhWQCNGRklae0JUVXxKaTtVMVVWfkpUVlRSdjtVKjZZVlJJWV04M1JXKXRaejF6TUE9PQ==/duyen-phan-ngan-nam.jpg">
-    <meta property="og:description" content="Truyện {{$story->story_description}}">
+    <meta property="og:description" content="Truyện {{$story->story_title}} của tác giả Lưu Thiên Thiên.">
     <meta property="og:url" content="{{$story->story_slug}}/">
     <meta property="book:author" content="http://localhost/truyenfull/tac-gia/luu-thien-thien/">
     <meta property="book:release_date" content="{{$story->created_at}}">
@@ -238,7 +238,7 @@
                     <div class="col-xs-12 comment-box">
                         <div class="title-list">
                             <h2>Bình luận truyện</h2></div>
-                        <div class="fb-comments" data-href="http://localhost/truyenfull/{{$story->story_slug}}/" data-width="832" data-numposts="5" data-colorscheme="light"></div>
+                        <div class="fb-comments" data-href="{{$story->story_slug}}/" data-width="832" data-numposts="5" data-colorscheme="light"></div>
                     </div>
                 </div>
             </div>

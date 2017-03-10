@@ -221,11 +221,11 @@ class AdminController extends Controller
         $stories = new Stories;
         $stories->story_title = $title;
         $stories->story_excerpt = $excerpt;
+        $stories->story_description = $description;
         $stories->story_keyword = $keywords;
         $stories->story_author = $author;
         $stories->story_thumbnail = $thumbnail;
         $stories->story_status = $status;
-        $stories->story_description = $description;
         $stories->story_slug = str_slug($title);
         $result = $stories->save();
         if($result)
@@ -316,7 +316,7 @@ class AdminController extends Controller
 
         }
         foreach($html_story->find('meta[name=description]') as $element) {
-            $description = $element->content;
+            $description  = $element->content;
             if (isset($description)) {
                 break;
             }
@@ -354,7 +354,7 @@ class AdminController extends Controller
         $story_title_exist = DB::table('stories')->where('story_title', '=', $title)->first();
         if (is_null($story_title_exist)) {
             $thumbnail = $this->creatThumbbyUrl($thumbnail);
-            $this->AutoAddStory($url,$title, $excerpt,$description, $keywords, $author, $thumbnail,$status,$terms);
+            $this->AutoAddStory($url,$title,$excerpt,$description, $keywords, $author, $thumbnail,$status,$terms);
             // It does not exist - add to favorites button will show
         } else {
             $arrayResult = array('message' => 'Trùng lặp với ID '.$story_title_exist->id,'status' => 'error' );
@@ -411,7 +411,6 @@ class AdminController extends Controller
     }
     public function ajaxAddchapter(Request $request)
     {   
-        ini_set('max_execution_time', 300);
         include_once(app_path() . '\Libraries\simple_html_dom.php');
         $data = $request->all(); // This will get all the request data.
         $url = $data['url'];

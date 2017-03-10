@@ -1,15 +1,15 @@
-<!DOCTYPE html>
 <html lang="vi" class="csstransforms3d">
 
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# book: http://ogp.me/ns/book# profile: http://ogp.me/ns/profile#">
     <meta charset="UTF-8">
-    <title>Đọc truyện online, đọc truyện hay</title>
+    <base href="http://localhost/truyenfull/">
+    <title>Tổng hợp truyện chữ hoàn (full)</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <meta name="description" content="Đọc truyện online, đọc truyện chữ, truyện hay, truyện full. Truyện Full luôn tổng hợp và cập nhật các chương truyện một cách nhanh nhất.">
-    <meta name="keywords" content="doc truyen, doc truyen online, truyen hay, truyen chu">
+    <meta name="description" content="Danh sách những truyện đã hoàn thành, ra đủ chương.">
+    <meta name="keywords" content="Truyện Full, truyen full, danh sach truyen full">
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <!--[if lt IE 9]><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
-    <link rel="canonical" href="http://truyenfull.vn/">
+    <link rel="canonical" href="http://truyenfull.vn/danh-sach/truyen-full/">
     <link rel="stylesheet" type="text/css" media="all" href="http://static.truyenfull.vn/min/g/maincss-1602-5.css">
     <link rel="search" type="application/opensearchdescription+xml" href="http://static.truyenfull.vn/xml/opensearch.xml" title="Search">
     <link rel="shortcut icon" type="image/x-icon" href="http://static.truyenfull.vn/favicon.ico">
@@ -496,15 +496,13 @@
     </style>
 </head>
 
-<body id="body_home">
+<body id="body_list">
     <div id="wrap">
         <div class="navbar navbar-default navbar-static-top" role="navigation" id="nav">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Hiện menu</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                    <h1><a class="header-logo" href="http://truyenfull.vn/" title="doc truyen">doc truyen</a></h1></div>
-                <div class="navbar-collapse collapse" itemscope="" itemtype="http://schema.org/WebSite">
-                    <meta itemprop="url" content="http://truyenfull.vn">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Hiện menu</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="header-logo" href="http://truyenfull.vn/" title="doc truyen">doc truyen</a></div>
+                <div class="navbar-collapse collapse">
                     <ul class="control nav navbar-nav ">
                         <li class="dropdown"><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-list"></span> Danh sách <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -513,7 +511,7 @@
                                 <li><a href="http://truyenfull.vn/danh-sach/truyen-full/" title="Truyện Full">Truyện Full</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown"><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-list"></span> Thể loại <span class="caret"></span></a>
+                        <li class="dropdown"><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="glyphicon glyphicon-list"></span> Thể loại <span class="caret"></span></a>
                             <div class="dropdown-menu multi-column">
                                 <div class="row">
                                     <div class="col-md-4">
@@ -569,10 +567,9 @@
                             </div>
                         </li>
                     </ul>
-                    <form class="navbar-form navbar-right" action="http://truyenfull.vn/tim-kiem/" role="search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+                    <form class="navbar-form navbar-right" action="http://truyenfull.vn/tim-kiem/" role="search">
                         <div class="input-group search-holder">
-                            <meta itemprop="target" content="http://truyenfull.vn/tim-kiem/?tukhoa={tukhoa}">
-                            <input class="form-control" id="search-input" type="search" name="tukhoa" placeholder="Tìm kiếm..." value="" itemprop="query-input" required="">
+                            <input class="form-control" id="search-input" type="search" name="tukhoa" placeholder="Tìm kiếm..." value="" required="">
                             <div class="input-group-btn">
                                 <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
                             </div>
@@ -584,161 +581,65 @@
                 <!--/.nav-collapse -->
             </div>
             <div class="navbar-breadcrumb">
-                <div class="container breadcrumb-container"> Đọc truyện online, đọc truyện chữ, truyện full, truyện hay. Tổng hợp đầy đủ và cập nhật liên tục.
+                <div class="container breadcrumb-container">
+                    <ol class="breadcrumb">
+                        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://truyenfull.vn" accesskey="1"><span class="glyphicon glyphicon-home"></span></a><a href="http://truyenfull.vn" title="Đọc truyện online" itemprop="url"><span itemprop="title">Truyện</span></a></li>
+                        <li class="active" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                            <h1><a href="http://truyenfull.vn/danh-sach/truyen-full/" title="Truyện Full" itemprop="url"><span itemprop="title">Truyện Full</span></a></h1></li>
+                    </ol>
                     <div class="navbar-social pull-right visible-md visible-lg">
-                        <div id="___follow_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 157px; height: 20px;">
-                            <iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 157px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1489054216115" name="I0_1489054216115" src="https://apis.google.com/u/0/_/widget/render/follow?usegapi=1&amp;annotation=bubble&amp;height=20&amp;rel=publisher&amp;origin=http%3A%2F%2Ftruyenfull.vn&amp;url=http%3A%2F%2Fplus.google.com%2Fu%2F0%2F101484280469954955401&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.vi.2WgXToTmu0s.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCOItS25-3-i-c7nhEc7CTU118bHXg#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;id=I0_1489054216115&amp;parent=http%3A%2F%2Ftruyenfull.vn&amp;pfname=&amp;rpctoken=12739201" data-gapiattached="true"></iframe>
+                        <div id="___follow_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 153px; height: 20px;">
+                            <iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 153px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1489064137742" name="I0_1489064137742" src="https://apis.google.com/u/0/_/widget/render/follow?usegapi=1&amp;annotation=bubble&amp;height=20&amp;rel=publisher&amp;origin=http%3A%2F%2Ftruyenfull.vn&amp;url=http%3A%2F%2Fplus.google.com%2Fu%2F0%2F101484280469954955401&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.vi.2WgXToTmu0s.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCOItS25-3-i-c7nhEc7CTU118bHXg#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;id=I0_1489064137742&amp;parent=http%3A%2F%2Ftruyenfull.vn&amp;pfname=&amp;rpctoken=24647153" data-gapiattached="true"></iframe>
                         </div>
                     </div>
                     <div class="navbar-social pull-right visible-md visible-lg">
-                        <div class="fb-like fb_iframe_widget" data-href="https://www.facebook.com/truyenfull" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=333184773543272&amp;container_width=0&amp;href=https%3A%2F%2Fwww.facebook.com%2Ftruyenfull&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false"><span style="vertical-align: bottom; width: 76px; height: 20px;"><iframe name="f2afc6ded651a44" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="https://www.facebook.com/v2.6/plugins/like.php?action=like&amp;app_id=333184773543272&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2Fao6eUeuGXQq.js%3Fversion%3D42%23cb%3Df3f9865d9c2178%26domain%3Dtruyenfull.vn%26origin%3Dhttp%253A%252F%252Ftruyenfull.vn%252Ff1de97af6be87d4%26relation%3Dparent.parent&amp;container_width=0&amp;href=https%3A%2F%2Fwww.facebook.com%2Ftruyenfull&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false" class="" style="border: none; visibility: visible; width: 76px; height: 20px;"></iframe></span></div>
+                        <div class="fb-like fb_iframe_widget" data-href="https://www.facebook.com/truyenfull" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=333184773543272&amp;container_width=0&amp;href=https%3A%2F%2Fwww.facebook.com%2Ftruyenfull&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false"><span style="vertical-align: bottom; width: 76px; height: 20px;"><iframe name="f3eb400186b0978" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="https://www.facebook.com/v2.6/plugins/like.php?action=like&amp;app_id=333184773543272&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2Fao6eUeuGXQq.js%3Fversion%3D42%23cb%3Dfb9cf0b66f8324%26domain%3Dtruyenfull.vn%26origin%3Dhttp%253A%252F%252Ftruyenfull.vn%252Ff3e5681d3f81cf%26relation%3Dparent.parent&amp;container_width=0&amp;href=https%3A%2F%2Fwww.facebook.com%2Ftruyenfull&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false" style="border: none; visibility: visible; width: 76px; height: 20px;" class=""></iframe></span></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container visible-md-block visible-lg-block" id="intro-index">
-            <div class="title-list">
-                <h2><a href="http://truyenfull.vn/danh-sach/truyen-hot/" title="Truyện hot">Truyện hot</a></h2><a href="http://truyenfull.vn/danh-sach/truyen-hot/" title="Truyện hot"><span class="glyphicon glyphicon-fire"></span></a>
-                <select id="hot-select" class="form-control new-select">
-                    <option value="all">Tất cả</option>
-                    <option value="1">Tiên Hiệp</option>
-                    <option value="2">Kiếm Hiệp</option>
-                    <option value="3">Ngôn Tình</option>
-                    <option value="4">Đô Thị</option>
-                    <option value="20">Quan Trường</option>
-                    <option value="6">Võng Du</option>
-                    <option value="5">Khoa Huyễn</option>
-                    <option value="8">Huyền Huyễn</option>
-                    <option value="7">Dị Giới</option>
-                    <option value="19">Dị Năng</option>
-                    <option value="10">Quân Sự</option>
-                    <option value="11">Lịch Sử</option>
-                    <option value="15">Xuyên Không</option>
-                    <option value="17">Trọng Sinh</option>
-                    <option value="18">Trinh Thám</option>
-                    <option value="16">Thám Hiểm</option>
-                    <option value="9">Linh Dị</option>
-                    <option value="12">Sắc</option>
-                    <option value="30">Ngược</option>
-                    <option value="36">Sủng</option>
-                    <option value="21">Cung Đấu</option>
-                    <option value="22">Nữ Cường</option>
-                    <option value="24">Gia Đấu</option>
-                    <option value="23">Đông Phương</option>
-                    <option value="13">Đam Mỹ</option>
-                    <option value="14">Bách Hợp</option>
-                    <option value="25">Hài Hước</option>
-                    <option value="27">Điền Văn</option>
-                    <option value="28">Cổ Đại</option>
-                    <option value="29">Mạt Thế</option>
-                    <option value="26">Truyện Teen</option>
-                    <option value="32">Tiểu Thuyết Phương Tây</option>
-                    <option value="33">Nữ Phụ</option>
-                    <option value="34">Light Novel</option>
-                    <option value="35">Văn học Việt Nam</option>
-                    <option value="37">Đoản Văn</option>
-                    <option value="31">Khác</option>
-                </select>
-            </div>
-            <div class="index-intro">
-                @foreach($hot_stories as $index => $hot_story)
-                <div class="item top-{{$index+1}}" itemscope="" itemtype="http://schema.org/Book">
-                    <a href="{{$hot_story->story_slug}}" itemprop="url"><img src="{{$hot_story->story_thumbnail}}" class="img-responsive item-img" alt="{{$hot_story->story_title}}">
-                        <div class="title">
-                            <h3 itemprop="name">{{$hot_story->story_title}}</h3></div>
-                    </a>
+        <div class="container" id="list-page">
+            <div class="col-xs-12 col-sm-12 col-md-9 col-truyen-main">
+                <div class="text-center">
+                    <div class="hidden-sm hidden-md hidden-lg" style="margin-top:-15px">
+                        <div class="fb-ad" data-placementid="333184773543272_502288693299545" data-format="native" data-nativeadid="ad_root" data-testmode="false"></div>
+                        <div id="ad_root">
+                            <a class="fbAdLink">
+                                <div class="fbAdMedia thirdPartyMediaClass"></div>
+                                <div class="fbAdTitle thirdPartyTitleClass"></div>
+                                <div class="fbAdBody thirdPartyBodyClass"></div>
+                                <div class="fbAdCallToAction thirdPartyCallToActionClass"></div>
+                            </a>
+                        </div>
+                        <div class="ads-320-100-backup-1"></div>
+                        <!--<div class="ads-320-100-3g"></div>--></div>
                 </div>
-                @endforeach
-                
-            </div>
-        </div>
-        <div class="container" id="list-index">
-            <div class="row text-center">
-                <!--<div class="hidden-md hidden-lg text-center w320"><div class="ads-320-100-3g"></div></div>--></div>
-            <div class="list list-truyen list-history col-xs-12 col-sm-12 col-md-8 col-truyen-main">
-                <div class="title-list">
-                    <h2>Truyện bạn đã đọc</h2></div>
-                <div class="row">
-                    <div class="col-xs-7 col-sm-6 col-md-8 col-title-history"><span class="glyphicon glyphicon-chevron-right"></span>
-                        <h3 itemprop="name"><a href="http://truyenfull.vn/nga-duc-phong-thien/">Ngã Dục Phong Thiên</a></h3></div>
-                    <div class="col-xs-5 col-sm-6 col-md-4 text-info"><a href="http://truyenfull.vn/nga-duc-phong-thien/chuong-1789/">Đọc tiếp <span class="chapter-text"><span>Chương </span></span>1789</a></div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-7 col-sm-6 col-md-8 col-title-history"><span class="glyphicon glyphicon-chevron-right"></span>
-                        <h3 itemprop="name"><a href="http://truyenfull.vn/da-sac-bien-duyen/">Dạ Sắc Biên Duyên</a></h3></div>
-                    <div class="col-xs-5 col-sm-6 col-md-4 text-info"><a href="http://truyenfull.vn/da-sac-bien-duyen/quyen-1-chuong-5/">Đọc tiếp <span class="book-text"><span>Quyển </span></span>1 - <span class="chapter-text"><span>Chương </span></span>5</a></div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-7 col-sm-6 col-md-8 col-title-history"><span class="glyphicon glyphicon-chevron-right"></span>
-                        <h3 itemprop="name"><a href="http://truyenfull.vn/nhat-niem-vinh-hang/">Nhất Niệm Vĩnh Hằng</a></h3></div>
-                    <div class="col-xs-5 col-sm-6 col-md-4 text-info"><a href="http://truyenfull.vn/nhat-niem-vinh-hang/chuong-158/">Đọc tiếp <span class="chapter-text"><span>Chương </span></span>158</a></div>
+                <div class="list list-truyen col-xs-12">
+                    <div class="title-list">
+                        <h2>Truyện Full</h2></div>
+                    @foreach($stories as $index => $story)    
+                    <div class="row" itemscope="" itemtype="http://schema.org/Book">
+                        <div class="col-xs-3">
+                            <div><img src="{{$story->story_thumbnail}}" class="cover" alt="{{$story->story_title}}"></div>
+                        </div>
+                        <div class="col-xs-7">
+                            <div><span class="glyphicon glyphicon-book"></span>
+                                <h3 class="truyen-title" itemprop="name"><a href="{{$story->story_slug}}" title="Hồ Sơ Chuyện Lạ" itemprop="url">{{$story->story_title}}</a></h3><span class="label-title label-new"></span><span class="label-title label-full"></span><span class="author" itemprop="author"><span class="glyphicon glyphicon-pencil"></span> {{$story->story_author}} </span>
+                            </div>
+                        </div>
+                        <div class="col-xs-2 text-info">
+                            <div><a href="{{$story->story_slug}}/chuong-{{$story->chapter_serial}}" title="{{$story->story_title}} - Chương {{$story->chapter_serial}}"><span class="chapter-text"><span>Chương </span></span>{{$story->chapter_serial}}</a></div>
+                        </div>
+                    </div>
+                    @endforeach
+                    
+                    
                 </div>
             </div>
-            <div class="list-truyen col-xs-12 col-sm-12 col-md-8 col-truyen-main text-center">
-                <div class="hidden-xs hidden-sm hidden-md">
-                    <iframe sandbox="allow-forms allow-same-origin allow-scripts allow-popups allow-pointer-lock" style="overflow:hidden" src="http://truyenfull.vn/ureka/geniee/geniee-728x90-2.html" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+            <div class="visible-md-block visible-lg-block col-md-3 text-center col-truyen-side">
+                <div class="panel cat-desc text-left">
+                    <div class="panel-body">Danh sách những truyện đã hoàn thành, ra đủ chương.</div>
                 </div>
-                <div class="hidden-sm hidden-md hidden-lg">
-                    <div class="ads-320-100-3g"></div>
-                </div>
-            </div>
-            <div class="list list-truyen list-new col-xs-12 col-sm-12 col-md-8 col-truyen-main">
-                <div class="title-list">
-                    <h2><a href="http://truyenfull.vn/danh-sach/truyen-moi/" title="Truyện mới">Truyện mới cập nhật</a></h2><a href="http://truyenfull.vn/danh-sach/truyen-moi/" title="Truyện mới"><span class="glyphicon glyphicon-menu-right"></span></a>
-                    <select id="new-select" class="form-control new-select">
-                        <option value="all">Tất cả</option>
-                        <option value="1">Tiên Hiệp</option>
-                        <option value="2">Kiếm Hiệp</option>
-                        <option value="3">Ngôn Tình</option>
-                        <option value="4">Đô Thị</option>
-                        <option value="20">Quan Trường</option>
-                        <option value="6">Võng Du</option>
-                        <option value="5">Khoa Huyễn</option>
-                        <option value="8">Huyền Huyễn</option>
-                        <option value="7">Dị Giới</option>
-                        <option value="19">Dị Năng</option>
-                        <option value="10">Quân Sự</option>
-                        <option value="11">Lịch Sử</option>
-                        <option value="15">Xuyên Không</option>
-                        <option value="17">Trọng Sinh</option>
-                        <option value="18">Trinh Thám</option>
-                        <option value="16">Thám Hiểm</option>
-                        <option value="9">Linh Dị</option>
-                        <option value="12">Sắc</option>
-                        <option value="30">Ngược</option>
-                        <option value="36">Sủng</option>
-                        <option value="21">Cung Đấu</option>
-                        <option value="22">Nữ Cường</option>
-                        <option value="24">Gia Đấu</option>
-                        <option value="23">Đông Phương</option>
-                        <option value="13">Đam Mỹ</option>
-                        <option value="14">Bách Hợp</option>
-                        <option value="25">Hài Hước</option>
-                        <option value="27">Điền Văn</option>
-                        <option value="28">Cổ Đại</option>
-                        <option value="29">Mạt Thế</option>
-                        <option value="26">Truyện Teen</option>
-                        <option value="32">Tiểu Thuyết Phương Tây</option>
-                        <option value="33">Nữ Phụ</option>
-                        <option value="34">Light Novel</option>
-                        <option value="35">Văn học Việt Nam</option>
-                        <option value="37">Đoản Văn</option>
-                        <option value="31">Khác</option>
-                    </select>
-                </div>
-               
-                @foreach($last_chapters as $last_chapter)
-                <div class="row" itemscope itemtype="http://schema.org/Book">
-                    <div class="col-xs-9 col-sm-6 col-md-5 col-title"><span class="glyphicon glyphicon-chevron-right"></span>
-                        <h3 itemprop="name"><a href="{{$last_chapter->story_slug}}" title="{{$last_chapter->story_title}}" itemprop="url">{{$last_chapter->story_title}}</a></h3></div>
-                    <div class="hidden-xs col-sm-3 col-md-3 col-cat text-888">{!!$last_chapter->term!!}</div>
-                    <div class="col-xs-3 col-sm-3 col-md-2 col-chap text-info"><a href="{{$last_chapter->story_slug}}/chuong-{{$last_chapter->chapter_serial}}" title="{{$last_chapter->story_slug}} - Chương {{$last_chapter->chapter_serial}}"><span class="chapter-text">{{$last_chapter->chapter_serial}}</a></div>
-                    <div class="hidden-xs hidden-sm col-md-2 col-time text-888">10 phút trước </div>
-                </div>
-                @endforeach
-            </div>
-            <div class="visible-md-block visible-lg-block col-md-4 text-center col-truyen-side">
-                <!--<div class="fb-page" data-href="https://www.facebook.com/truyenfull" data-width="308" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/truyenfull"><a href="https://www.facebook.com/truyenfull">Truyện Full</a></blockquote></div></div>-->
                 <div class="list list-truyen list-cat col-xs-12">
                     <div class="title-list">
                         <h4>Thể loại truyện</h4></div>
@@ -782,38 +683,103 @@
                         <div class="col-xs-6"><a href="http://truyenfull.vn/the-loai/khac/" title="Truyện Khác">Khác</a></div>
                     </div>
                 </div>
+                <iframe sandbox="allow-forms allow-same-origin allow-scripts allow-popups allow-pointer-lock" style="overflow:hidden" src="http://truyenfull.vn/ureka/geniee/geniee-300x250.html" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+                <!--<object type="application/x-shockwave-flash" data="http://tutienchilo.com/public/banners/300_250_truyenfullvn.swf" width="300" height="250"><param name="movie" value="http://tutienchilo.com/public/banners/300_250_truyenfullvn.swf" /><param name="quality" value="high"/></object>-->
+                <div class="list list-truyen list-side col-xs-12">
+                    <div class="title-list">
+                        <h4>Truyện đang hot</h4></div>
+                    <div class="row top-nav" data-limit="10">
+                        <div class="col-xs-4 active" data-type="day">Ngày</div>
+                        <div class="col-xs-4" data-type="month">Tháng</div>
+                        <div class="col-xs-4" data-type="all">All time</div>
+                    </div>
+                    <div class="row top-item" itemscope="" itemtype="http://schema.org/Book">
+                        <div class="col-xs-12">
+                            <div class="top-num top-1">1</div>
+                            <div class="s-title">
+                                <h3 itemprop="name"><a href="http://truyenfull.vn/linh-vu-thien-ha/" title="Linh Vũ Thiên Hạ" itemprop="url">Linh Vũ Thiên Hạ</a></h3></div>
+                            <div><a itemprop="genre" href="http://truyenfull.vn/the-loai/tien-hiep/" title="Tiên Hiệp">Tiên Hiệp</a>, <a itemprop="genre" href="http://truyenfull.vn/the-loai/di-gioi/" title="Dị Giới">Dị Giới</a>, <a itemprop="genre" href="http://truyenfull.vn/the-loai/huyen-huyen/" title="Huyền Huyễn">Huyền Huyễn</a></div>
+                        </div>
+                    </div>
+                    <div class="row top-item" itemscope="" itemtype="http://schema.org/Book">
+                        <div class="col-xs-12">
+                            <div class="top-num top-2">2</div>
+                            <div class="s-title">
+                                <h3 itemprop="name"><a href="http://truyenfull.vn/nga-duc-phong-thien/" title="Ngã Dục Phong Thiên" itemprop="url">Ngã Dục Phong Thiên</a></h3></div>
+                            <div><a itemprop="genre" href="http://truyenfull.vn/the-loai/tien-hiep/" title="Tiên Hiệp">Tiên Hiệp</a>, <a itemprop="genre" href="http://truyenfull.vn/the-loai/huyen-huyen/" title="Huyền Huyễn">Huyền Huyễn</a></div>
+                        </div>
+                    </div>
+                    <div class="row top-item" itemscope="" itemtype="http://schema.org/Book">
+                        <div class="col-xs-12">
+                            <div class="top-num top-3">3</div>
+                            <div class="s-title">
+                                <h3 itemprop="name"><a href="http://truyenfull.vn/thieu-gia-ac-ma-dung-hon-toi/" title="Thiếu Gia Ác Ma Đừng Hôn Tôi" itemprop="url">Thiếu Gia Ác Ma Đừng Hôn Tôi</a></h3></div>
+                            <div><a itemprop="genre" href="http://truyenfull.vn/the-loai/ngon-tinh/" title="Ngôn Tình">Ngôn Tình</a></div>
+                        </div>
+                    </div>
+                    <div class="row top-item" itemscope="" itemtype="http://schema.org/Book">
+                        <div class="col-xs-12">
+                            <div class="top-num top-4">4</div>
+                            <div class="s-title">
+                                <h3 itemprop="name"><a href="http://truyenfull.vn/van-co-chi-ton/" title="Vạn Cổ Chí Tôn" itemprop="url">Vạn Cổ Chí Tôn</a></h3></div>
+                            <div><a itemprop="genre" href="http://truyenfull.vn/the-loai/huyen-huyen/" title="Huyền Huyễn">Huyền Huyễn</a></div>
+                        </div>
+                    </div>
+                    <div class="row top-item" itemscope="" itemtype="http://schema.org/Book">
+                        <div class="col-xs-12">
+                            <div class="top-num top-5">5</div>
+                            <div class="s-title">
+                                <h3 itemprop="name"><a href="http://truyenfull.vn/doc-ton-tam-gioi/" title="Độc Tôn Tam Giới" itemprop="url">Độc Tôn Tam Giới</a></h3></div>
+                            <div><a itemprop="genre" href="http://truyenfull.vn/the-loai/tien-hiep/" title="Tiên Hiệp">Tiên Hiệp</a>, <a itemprop="genre" href="http://truyenfull.vn/the-loai/huyen-huyen/" title="Huyền Huyễn">Huyền Huyễn</a></div>
+                        </div>
+                    </div>
+                    <div class="row top-item" itemscope="" itemtype="http://schema.org/Book">
+                        <div class="col-xs-12">
+                            <div class="top-num top-6">6</div>
+                            <div class="s-title">
+                                <h3 itemprop="name"><a href="http://truyenfull.vn/dau-pha-thuong-khung/" title="Đấu Phá Thương Khung" itemprop="url">Đấu Phá Thương Khung</a></h3></div>
+                            <div><a itemprop="genre" href="http://truyenfull.vn/the-loai/tien-hiep/" title="Tiên Hiệp">Tiên Hiệp</a>, <a itemprop="genre" href="http://truyenfull.vn/the-loai/di-gioi/" title="Dị Giới">Dị Giới</a>, <a itemprop="genre" href="http://truyenfull.vn/the-loai/huyen-huyen/" title="Huyền Huyễn">Huyền Huyễn</a></div>
+                        </div>
+                    </div>
+                    <div class="row top-item" itemscope="" itemtype="http://schema.org/Book">
+                        <div class="col-xs-12">
+                            <div class="top-num top-7">7</div>
+                            <div class="s-title">
+                                <h3 itemprop="name"><a href="http://truyenfull.vn/truyen-than-khong-thien-ha/" title="Thần Khống Thiên Hạ" itemprop="url">Thần Khống Thiên Hạ</a></h3></div>
+                            <div><a itemprop="genre" href="http://truyenfull.vn/the-loai/tien-hiep/" title="Tiên Hiệp">Tiên Hiệp</a>, <a itemprop="genre" href="http://truyenfull.vn/the-loai/di-gioi/" title="Dị Giới">Dị Giới</a>, <a itemprop="genre" href="http://truyenfull.vn/the-loai/huyen-huyen/" title="Huyền Huyễn">Huyền Huyễn</a></div>
+                        </div>
+                    </div>
+                    <div class="row top-item" itemscope="" itemtype="http://schema.org/Book">
+                        <div class="col-xs-12">
+                            <div class="top-num top-8">8</div>
+                            <div class="s-title">
+                                <h3 itemprop="name"><a href="http://truyenfull.vn/de-ba/" title="Đế Bá" itemprop="url">Đế Bá</a></h3></div>
+                            <div><a itemprop="genre" href="http://truyenfull.vn/the-loai/huyen-huyen/" title="Huyền Huyễn">Huyền Huyễn</a></div>
+                        </div>
+                    </div>
+                    <div class="row top-item" itemscope="" itemtype="http://schema.org/Book">
+                        <div class="col-xs-12">
+                            <div class="top-num top-9">9</div>
+                            <div class="s-title">
+                                <h3 itemprop="name"><a href="http://truyenfull.vn/de-ton/" title="Đế Tôn" itemprop="url">Đế Tôn</a></h3></div>
+                            <div><a itemprop="genre" href="http://truyenfull.vn/the-loai/tien-hiep/" title="Tiên Hiệp">Tiên Hiệp</a>, <a itemprop="genre" href="http://truyenfull.vn/the-loai/kiem-hiep/" title="Kiếm Hiệp">Kiếm Hiệp</a>, <a itemprop="genre" href="http://truyenfull.vn/the-loai/huyen-huyen/" title="Huyền Huyễn">Huyền Huyễn</a></div>
+                        </div>
+                    </div>
+                    <div class="row top-item" itemscope="" itemtype="http://schema.org/Book">
+                        <div class="col-xs-12">
+                            <div class="top-num top-10">10</div>
+                            <div class="s-title">
+                                <h3 itemprop="name"><a href="http://truyenfull.vn/tong-tai-o-tren-toi-o-duoi/" title="Tổng Tài Ở Trên Tôi Ở Dưới" itemprop="url">Tổng Tài Ở Trên Tôi Ở Dưới</a></h3></div>
+                            <div><a itemprop="genre" href="http://truyenfull.vn/the-loai/ngon-tinh/" title="Ngôn Tình">Ngôn Tình</a></div>
+                        </div>
+                    </div>
+                </div>
                 <iframe sandbox="allow-forms allow-same-origin allow-scripts allow-popups allow-pointer-lock" style="overflow:hidden" src="http://truyenfull.vn/ureka/geniee/geniee-300x600.html" width="300" height="600" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
             </div>
-            <div class="row text-center">
-                <div class="hidden-md hidden-lg text-center w320">
-                    <div class="fb-ad" data-placementid="333184773543272_500194770175604" data-format="native" data-nativeadid="ad_root" data-testmode="false"></div>
-                    <div id="ad_root">
-                        <a class="fbAdLink">
-                            <div class="fbAdMedia thirdPartyMediaClass"></div>
-                            <div class="fbAdTitle thirdPartyTitleClass"></div>
-                            <div class="fbAdBody thirdPartyBodyClass"></div>
-                            <div class="fbAdCallToAction thirdPartyCallToActionClass"></div>
-                        </a>
-                    </div>
-                    <div class="ads-320-100-backup-1"></div>
-                    <!--<div class="ads-320-100-exoclick"></div>--></div>
-            </div>
         </div>
-        <div class="container" id="truyen-slide">
-            <div class="list list-thumbnail col-xs-12">
-                <div class="title-list">
-                    <h2><a href="http://truyenfull.vn/danh-sach/truyen-full/" title="Truyện full">Truyện đã hoàn thành</a></h2><a href="http://truyenfull.vn/danh-sach/truyen-full/" title="Truyện full"><span class="glyphicon glyphicon-menu-right"></span></a></div>
-   
-                <div class="row">
-                    @foreach($full_stories as $index => $full_story)
-                    <div class="col-xs-4 col-sm-3 col-md-2">
-                        <a href="{{$full_story->story_slug}}" title="{{$full_story->story_title}}"><img src="{{$full_story->story_thumbnail}}" class="undefined" alt="{{$full_story->story_title}}" width="164px;">
-                            <div class="caption">
-                                <h3>{{$full_story->story_title}}</h3><small class="btn-xs label-primary">Full - 1303 chương</small></div>
-                        </a>
-                    </div>
-                    @endforeach
-                </div>
+        <div class="container text-center pagination-container">
+            <div class="col-xs-12 col-sm-12 col-md-9 col-truyen-main">
+                {!! $stories->render() !!}
             </div>
         </div>
     </div>
@@ -833,21 +799,24 @@
     <script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js"></script>
     <script async="" src="http://static.truyenfull.vn/js/analytics.js"></script>
     <script src="http://static.truyenfull.vn/min/g/mainjs-1002.js"></script>
-
+    <!--<script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw.js" async></script>-->
+    <!--<script type="text/javascript">if($.browser.mobile){	(function() {	var s = document.createElement('script');	s.type = 'text/javascript';	s.async = true;	s.src = 'https://connect.facebook.net/en_US/fbadnw.js';	var x = document.getElementsByTagName('script')[0];	x.parentNode.insertBefore(s, x);	})();
+}</script>-->
     <div id="checkfbads" data-loaded="0"></div>
+    <!--<div id="aff"></div>-->
     <div id="ifvp"></div>
+    <iframe name="oauth2relay600078946" id="oauth2relay600078946" src="https://accounts.google.com/o/oauth2/postmessageRelay?parent=http%3A%2F%2Ftruyenfull.vn&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.vi.2WgXToTmu0s.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCOItS25-3-i-c7nhEc7CTU118bHXg#rpctoken=853987285&amp;forcesecure=1" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe>
     <div id="fb-root" class=" fb_reset">
         <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
             <div>
-                <iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="http://staticxx.facebook.com/connect/xd_arbiter/r/ao6eUeuGXQq.js?version=42#channel=f1de97af6be87d4&amp;origin=http%3A%2F%2Ftruyenfull.vn" style="border: none;"></iframe>
-                <iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="https://staticxx.facebook.com/connect/xd_arbiter/r/ao6eUeuGXQq.js?version=42#channel=f1de97af6be87d4&amp;origin=http%3A%2F%2Ftruyenfull.vn" style="border: none;"></iframe>
+                <iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="http://staticxx.facebook.com/connect/xd_arbiter/r/ao6eUeuGXQq.js?version=42#channel=f3e5681d3f81cf&amp;origin=http%3A%2F%2Ftruyenfull.vn" style="border: none;"></iframe>
+                <iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="https://staticxx.facebook.com/connect/xd_arbiter/r/ao6eUeuGXQq.js?version=42#channel=f3e5681d3f81cf&amp;origin=http%3A%2F%2Ftruyenfull.vn" style="border: none;"></iframe>
             </div>
         </div>
         <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
             <div></div>
         </div>
     </div>
-    <iframe name="oauth2relay254347220" id="oauth2relay254347220" src="https://accounts.google.com/o/oauth2/postmessageRelay?parent=http%3A%2F%2Ftruyenfull.vn&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.vi.2WgXToTmu0s.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCOItS25-3-i-c7nhEc7CTU118bHXg#rpctoken=543863977&amp;forcesecure=1" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe>
 </body>
 
 </html>
