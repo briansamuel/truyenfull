@@ -15,8 +15,6 @@
 
 
 Route::get('/the-loai/{slug}/','PublicController@categoryPage');
-
-Route::get('/{slug}','PublicController@storyPage');
 Route::get('/{slug}/chuong-{serial}','PublicController@chapterPage');
 Route::get('/danh-sach/truyen-full','PublicController@termPage');
 
@@ -33,6 +31,7 @@ Route::get('/admin/category','AdminController@categoriesAction');
 Route::post('/admin/story','StoryController@store');
 Route::post('/admin/category/add','TermController@addcategory');
 Route::get('/admin/test','AdminController@AutogetTerm2');
+
 Route::get('/admin/plugins/autostory',function () {
     return view('admin/plugins/autostory');
 });

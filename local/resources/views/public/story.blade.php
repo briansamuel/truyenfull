@@ -180,8 +180,8 @@
                     <div class="col-xs-12 col-sm-8 col-md-8 desc">
                         <h3 class="title" itemprop="name">{{$story->story_title}}</h3>
                         <div class="rate">
-                            <div class="rate-holder" data-score="6.9" style="cursor: pointer;"><img alt="1" src="http://static.truyenfull.vn/lib/raty/images/star-on.png" title="Không còn gì để nói...">&nbsp;<img alt="2" src="http://static.truyenfull.vn/lib/raty/images/star-on.png" title="WTF">&nbsp;<img alt="3" src="http://static.truyenfull.vn/lib/raty/images/star-on.png" title="Cái gì thế này ?!">&nbsp;<img alt="4" src="http://static.truyenfull.vn/lib/raty/images/star-on.png" title="Haizz">&nbsp;<img alt="5" src="http://static.truyenfull.vn/lib/raty/images/star-on.png" title="Tạm">&nbsp;<img alt="6" src="http://static.truyenfull.vn/lib/raty/images/star-on.png" title="Cũng được">&nbsp;<img alt="7" src="http://static.truyenfull.vn/lib/raty/images/star-on.png" title="Khá đấy">&nbsp;<img alt="8" src="http://static.truyenfull.vn/lib/raty/images/star-off.png" title="Được">&nbsp;<img alt="9" src="http://static.truyenfull.vn/lib/raty/images/star-off.png" title="Hay">&nbsp;<img alt="10" src="http://static.truyenfull.vn/lib/raty/images/star-off.png" title="Tuyệt đỉnh!">
-                                <input name="score" type="hidden" value="6.9">
+                            <div class="rate-holder" data-score="4" style="cursor: pointer;">
+                                <input name="score" type="hidden" value="4">
                             </div><em class="rate-text"></em>
                             <div class="small" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating"><em>Đánh giá: <strong><span itemprop="ratingValue">6.9</span></strong>/<span class="text-muted" itemprop="bestRating">10</span> từ <strong><span itemprop="ratingCount">18</span> lượt</strong></em></div>
                         </div>
@@ -245,7 +245,7 @@
                 </div>
             </div>
             <div class="visible-md-block visible-lg-block col-md-3 text-center col-truyen-side">
-                <!-- Ads Chỗ này đặt quảng cáo -->2
+                <!-- Ads Chỗ này đặt quảng cáo -->
                 <div class="list list-truyen col-xs-12">
                     <div class="title-list">
                         <h4>Truyện cùng tác giả</h4></div>
