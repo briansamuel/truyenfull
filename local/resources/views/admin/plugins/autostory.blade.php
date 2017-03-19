@@ -21,7 +21,7 @@
             <form method="POST" action="{{ url('admin/story') }}">
               <div class="col-md-9 col-sm-12 col-xs-12">
                 
-                  <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+                  <input type="hidden" id="token" name="_token" value="{!! csrf_token() !!}">
                   <input type="hidden" name="author"  value="{{Auth::user()->name}}">
                   <div class="box box-info">
 
@@ -160,12 +160,14 @@
               }
           });
        addChapterAjax(lines,i+1,parent);
-     }, 500);
+     }, 1000);
   }
   function getListChapterAjax(lines,i,parent)
   {
     var token = $('#start-auto').data("token");
-    if (i < 0) return;
+    var length = lines.length - 1;
+    console.log(lines[i]);
+    if (i > length) return;
     setTimeout(function() {
         $.ajax({
 
@@ -181,16 +183,16 @@
             },
             success: function(response){ // What to do if we succeed
                
-                //addChapterAjax(response,0,parent);
-                //console.log(response[i]);
+                addChapterAjax(response,0,parent);
+                console.log(response);
             },
             error: function(jqXHR, textStatus, errorThrown) { // What to do if we fail
                 //console.log(JSON.stringify(jqXHR));
                 //console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
             }
         });
-        getListChapterAjax(lines,i-1);
-     }, 500);
+        getListChapterAjax(lines,i+1,parent);
+     }, 5000);
   }
   function addStoryAjax(lines,i)
   {
@@ -205,15 +207,19 @@
               url: "admin/ajax/addstory",
               type: 'POST',
               dataType: "JSON",
+              timeout: 10000,
+              async: false,
               data: {
                   "url": url,
                   "_token": token
               },
               success: function(response){ // What to do if we succeed
                   
-                  var lines = response['list_chapter'];
+                  var lines = response['list_page'];
+                  
                   var i = lines.length-1;
-                  addChapterAjax(lines,0,response['id']);
+
+                  getListChapterAjax(lines,0,response['id']);
                   $('#list-result').append(response['message']+"<br>");
               },
               error: function(jqXHR, textStatus, errorThrown) { // What to do if we fail
@@ -236,6 +242,8 @@
             url: "admin/ajax/getstory",
             type: 'POST',
             dataType: "JSON",
+            timeout: 10000,
+            async: false,
             data: {
                 "url": lines[i],
                 "_token": token

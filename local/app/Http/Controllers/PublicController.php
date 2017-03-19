@@ -118,23 +118,67 @@ class PublicController extends Controller
     {
         
         $story = DB::table('stories')->where('story_slug',$slug)->first();
+        $chapters = DB::table('chapters')
+        ->where('chapters.story_parent',$story->id)
+        ->orderBy('chapters.chapter_serial','asc')
+        ->orderBy('chapters.created_at','asc')
+        ->paginate(50);
+        $terms = new Terms;
+        $story->term = $terms::listTermbyStory($story->id);
+        $story->author_slug = str_slug($story->story_author);
         if($story)
         {
-            return view('public/story')->with("story", $story);
+            return view('public/story')->with("story", $story)->with("chapters", $chapters);
         }
         //echo $last_chapters;
         
     }
-
-    public function chapterPage($slug,$serial)
+    public function ajaxPage(Request $request)
     {
         
+        $story = DB::table('stories')->where('story_slug',$slug)->first();
+        $chapters = DB::table('chapters')
+        ->where('chapters.story_parent',$story->id)
+        ->orderBy('chapters.chapter_serial','asc')
+        ->orderBy('chapters.created_at','asc')
+        ->paginate(50);
+         if ($request->ajax()) {
+            return view('partials.load', compact('chapters'));
+        }
+        return view('productlist',compact('chapters'));
+        
+    }
+    public function chapterPage($slug,$slugchap)
+    {
+
         $chapter = DB::table('stories')
         ->join('chapters', 'stories.id', '=', 'chapters.story_parent')
         ->where('stories.story_slug',$slug)
-        ->where('chapters.chapter_serial',$serial)
+        ->where('chapters.chapter_slug',$slugchap)
         ->first();
-        return view('public/chapter')->with("chapter", $chapter);
+
+        if($chapter)
+        {
+            $prev = DB::table('stories')
+            ->select('chapters.chapter_title','chapters.chapter_slug')
+            ->join('chapters', 'stories.id', '=', 'chapters.story_parent')
+            ->where('stories.story_slug',$slug)
+            ->where('chapters.chapter_id','<',$chapter->chapter_id)
+            ->first();
+
+            $next = DB::table('stories')
+            ->join('chapters', 'stories.id', '=', 'chapters.story_parent')
+            ->where('stories.story_slug',$slug)
+            ->where('chapters.chapter_id','>',$chapter->chapter_id)
+            ->first();
+        }
+        else
+        {
+            $prev = NULL;
+            $next = NULL;
+        }
+
+        return view('public/chapter')->with("chapter", $chapter)->with('prev', $prev)->with('next', $next);
         //echo $last_chapters;
         
     }
@@ -166,6 +210,22 @@ class PublicController extends Controller
         ->where('terms.term_slug','tien-hiep')
         ->paginate(25);
 
+        foreach ($stories as $key => $story) {
+            $thumb = $story->story_thumbnail;
+            $story->story_thumbnail = "http://localhost/truyenfull/static/cropimage?url=".$thumb;
+        }
+        return view('public/term')->with("stories", $stories);
+        //echo $last_chapters;
+        
+    }
+
+    public function authorPage($slug)
+    {
+        $slug = str_replace('-', ' ', $slug);
+        $stories = DB::table('stories')
+         ->join('chapters', 'stories.last_chapter', '=', 'chapters.chapter_id')
+        ->where('stories.story_author','like','%'.$slug.'%')
+        ->paginate(25);
         foreach ($stories as $key => $story) {
             $thumb = $story->story_thumbnail;
             $story->story_thumbnail = "http://localhost/truyenfull/static/cropimage?url=".$thumb;

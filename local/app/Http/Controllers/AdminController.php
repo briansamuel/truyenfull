@@ -217,7 +217,7 @@ class AdminController extends Controller
             $terms->save();
         }
     }
-    public function AutoAddStory($url,$title,$excerpt,$description,$keywords,$author,$thumbnail,$status,$terms)
+    public function AutoAddStory($url,$title,$excerpt,$description,$keywords,$author,$source,$thumbnail,$status,$terms)
     {
         $stories = new Stories;
         $stories->story_title = $title;
@@ -225,6 +225,7 @@ class AdminController extends Controller
         $stories->story_description = $description;
         $stories->story_keyword = $keywords;
         $stories->story_author = $author;
+        $stories->story_source = $source;
         $stories->story_thumbnail = $thumbnail;
         $stories->story_status = $status;
         $stories->story_slug = str_slug($title);
@@ -241,11 +242,31 @@ class AdminController extends Controller
             }
             $html = $this->CurlHTML($url);
             $html = str_get_html($html);
+            $chapter = 0;
             $story_array_url = array();
-            $elements = $html->find('#list-chapter .row a ');
-            foreach ($elements as $element)
-                array_push($story_array_url, $element->href);
-            $arrayResult = array('list_chapter' => $story_array_url,'message' => $title.' - Tạo truyện thành công ','id' => $stories->id,'term' => $terms );
+            $elements = $html->find('.pagination li a');
+            $count = count($elements);
+            foreach ($elements as $index => $element) {
+                $stt = $index+2;
+                if($count==$stt)
+                {
+
+                    $array_page = explode('trang-', $element->href);
+                    if(count($array_page) > 1)
+                    {
+                        $chapter = intval(str_replace('/#list-chapter', '',$array_page[1]));
+                    }
+            }
+                        
+            }
+            if($count == 0)
+            {
+                array_push($story_array_url, $url);
+            }
+            for ($i=1; $i <= $chapter; $i++) { 
+                array_push($story_array_url, $url.'trang-'.$i);
+            }
+            $arrayResult = array('list_page' => $story_array_url,'message' => $title.' - Tạo truyện thành công ','id' => $stories->id,'term' => $terms );
             echo json_encode($arrayResult);
 
         }
@@ -301,6 +322,7 @@ class AdminController extends Controller
         $author = "";
         $thumbnail = "";
         $status = "";
+        $source = "";
         $terms = array();
         foreach($html_story->find('h3.title') as $element) {
 
@@ -341,6 +363,12 @@ class AdminController extends Controller
                 break;
             }
         }
+        foreach($html_story->find('.source') as $element) {
+            $source = $element->innertext;
+            if (isset($source)) {
+                break;
+            }
+        }
         foreach($html_story->find('.books img') as $element) {
 
             $thumbnail = $element->src;
@@ -355,7 +383,7 @@ class AdminController extends Controller
         $story_title_exist = DB::table('stories')->where('story_title', '=', $title)->first();
         if (is_null($story_title_exist)) {
             $thumbnail = $this->creatThumbbyUrl($thumbnail);
-            $this->AutoAddStory($url,$title,$excerpt,$description, $keywords, $author, $thumbnail,$status,$terms);
+            $this->AutoAddStory($url,$title,$excerpt,$description, $keywords, $author,$source, $thumbnail,$status,$terms);
             // It does not exist - add to favorites button will show
         } else {
             $arrayResult = array('message' => 'Trùng lặp với ID '.$story_title_exist->id,'status' => 'error' );
@@ -378,12 +406,13 @@ class AdminController extends Controller
         }
     }
     // Ajax Chapter
-    public function AutoAddChapter($serial,$title,$content,$parent)
+    public function AutoAddChapter($serial,$slug,$title,$content,$parent)
     {
         $chapters = new Chapters;
         $chapters->chapter_serial = $serial;
         $chapters->chapter_title = $title;
         $chapters->chapter_content = $content;
+        $chapters->chapter_slug = $slug;
         $chapters->story_parent = $parent;
         $chapters->chapter_status = 'publish';
         $result = $chapters->save();
@@ -396,6 +425,18 @@ class AdminController extends Controller
             ->update(array('last_chapter' => $chapters->id,'chapter_update_at' => $chapter_updated_at)); 
             echo $title.' - Đăng thành công <br>';
         }
+    }
+    public function ajaxGetPage(Request $request)
+    {
+        
+        $data = $request->all(); // This will get all the request data.
+        $url = $data['url'];
+        $returnValue2 = explode('/', $url);
+        var_dump($returnValue2);
+        $count = count($returnValue2);
+        var_dump($count);
+        $slug = $returnValue2[$count-2];
+        echo $slug;
     }
     public function ajaxGetchapter(Request $request)
     {
@@ -421,10 +462,10 @@ class AdminController extends Controller
         $title = "";
         $serial = "";
         $content = "";
+        $slug = "";
         foreach($html_story->find('h2') as $element) {
 
-           
-            
+
             $title = $element->plaintext;
             if (isset($title)) {
                 break;
@@ -440,7 +481,10 @@ class AdminController extends Controller
         $returnValue = explode('chuong-', $url);
         $serial = str_replace("/", "", $returnValue[1]);
         $serial = str_replace("-", ".", $serial);
-        $this->AutoAddChapter($serial,$title,$content,$parent);
+        $returnValue2 = explode('/', $url);
+        $count = count($returnValue2);
+        $slug = $returnValue2[$count-2];
+        $this->AutoAddChapter($serial,$slug,$title,$content,$parent);
             
     }
 }

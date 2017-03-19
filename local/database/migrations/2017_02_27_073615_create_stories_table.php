@@ -21,6 +21,7 @@ class CreateStoriesTable extends Migration
             $table->text('story_keyword'); // thêm cột keyword
             $table->string('story_thumbnail'); // thêm cột ảnh đại diện
             $table->text('story_author');
+            $table->text('story_source');
             $table->string('story_status')->default('pending'); // thêm cột trạng thái
             $table->string('story_slug'); // thêm cột trạng thái
             $table->integer('last_chapter')->default(0);

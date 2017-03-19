@@ -779,7 +779,7 @@
         </div>
         <div class="container text-center pagination-container">
             <div class="col-xs-12 col-sm-12 col-md-9 col-truyen-main">
-                {!! $stories->render() !!}
+                {!! $stories->links() !!}
             </div>
         </div>
     </div>

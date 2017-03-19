@@ -3,6 +3,7 @@
 
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# book: http://ogp.me/ns/book# profile: http://ogp.me/ns/profile#">
     <meta charset="UTF-8">
+    <base href="http://localhost/truyenfull/">
     <title>{{$chapter->story_title}} - {{$chapter->chapter_title}}</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <meta name="description" content="{{$chapter->story_title}} - {{$chapter->chapter_title}}">
@@ -706,8 +707,16 @@
                         <input type="hidden" id="chapter-id" value="1799049">
                         <input type="hidden" id="chapter-bnum" value="">
                         <input type="hidden" id="chapter-num" value="1814">
-                        <div class="btn-group"><a class="btn btn-success" href="http://truyenfull.vn/nga-duc-phong-thien/chuong-1813/" title="Chương 1813" id="prev_chap"><span class="glyphicon glyphicon-chevron-left"></span> <span class="hidden-xs">Chương </span>trước</a>
-                            <button type="button" class="btn btn-success chapter_jump"><span class="glyphicon glyphicon-list-alt"></span></button><a class="btn btn-success" href="http://truyenfull.vn/nga-duc-phong-thien/chuong-1815/" title="Chương 1815" id="next_chap"><span class="hidden-xs">Chương </span>tiếp <span class="glyphicon glyphicon-chevron-right"></span></a></div>
+                        
+                        <div class="btn-group">
+                        @if(is_null($prev) != true)    
+                        <a class="btn btn-success" href="{{$prev->chapter_slug}}" title="{{$prev->chapter_title}}" id="prev_chap"><span class="glyphicon glyphicon-chevron-left"></span> <span class="hidden-xs">Chương </span>trước</a>
+                        @endif
+                        <button type="button" class="btn btn-success chapter_jump"><span class="glyphicon glyphicon-list-alt"></span></button>
+                        @if(is_null($next) != true)
+                        <a class="btn btn-success" href="{{$next->chapter_slug}}" title="{{$next->chapter_title}}" id="next_chap"><span class="hidden-xs">Chương </span>tiếp <span class="glyphicon glyphicon-chevron-right"></span></a>
+                        @endif
+                        </div>
                     </div>
                     <hr class="chapter-end">
                     <div class="hidden-xs text-center ads-holder ads-728-90-holder">
@@ -736,8 +745,15 @@
                         <!--<div class="ads-320-100-exoclick"></div>--></div>
                     <hr class="chapter-end">
                     <div class="chapter-nav" id="chapter-nav-bot">
-                        <div class="btn-group"><a class="btn btn-success" href="http://truyenfull.vn/nga-duc-phong-thien/chuong-1813/" title="Chương 1813" id="prev_chap"><span class="glyphicon glyphicon-chevron-left"></span> <span class="hidden-xs">Chương </span>trước</a>
-                            <button type="button" class="btn btn-success chapter_jump"><span class="glyphicon glyphicon-list-alt"></span></button><a class="btn btn-success" href="http://truyenfull.vn/nga-duc-phong-thien/chuong-1815/" title="Chương 1815" id="next_chap"><span class="hidden-xs">Chương </span>tiếp <span class="glyphicon glyphicon-chevron-right"></span></a></div>
+                        <div class="btn-group">
+                        @if(is_null($prev) != true)    
+                        <a class="btn btn-success" href="{{$prev->chapter_slug}}" title="{{$prev->chapter_title}}" id="prev_chap"><span class="glyphicon glyphicon-chevron-left"></span> <span class="hidden-xs">Chương </span>trước</a>
+                        @endif
+                        <button type="button" class="btn btn-success chapter_jump"><span class="glyphicon glyphicon-list-alt"></span></button>
+                        @if(is_null($next) != true)
+                        <a class="btn btn-success" href="{{$next->chapter_slug}}" title="{{$next->chapter_title}}" id="next_chap"><span class="hidden-xs">Chương </span>tiếp <span class="glyphicon glyphicon-chevron-right"></span></a>
+                        @endif
+                        </div>
                         <div class="text-center">
                             <button type="button" class="btn btn-warning" id="chapter_error"><span class="glyphicon glyphicon-exclamation-sign"></span> Báo lỗi chương</button>
                             <button type="button" class="btn btn-info" id="chapter_comment"><span class="glyphicon glyphicon-comment"></span> Bình luận</button>

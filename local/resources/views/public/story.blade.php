@@ -36,7 +36,7 @@
     <meta property="og:image" content="http://static.truyenfull.vn/poster/n2/QWJ4NzhWQUZmRkcxcTBldypGYVZaejBpX0deRmYqQCp2VmtBYUxNMm0xMW96TDBaQClHeHJXV1JNTn5GfE5dVlVVR3R4WnteeFl8dFVXVVooWntGUl96WXRNXV1XUnx4fk5WOVRfMjFSVUhWQCNGRklae0JUVXxKaTtVMVVWfkpUVlRSdjtVKjZZVlJJWV04M1JXKXRaejF6TUE9PQ==/duyen-phan-ngan-nam.jpg">
     <meta property="og:description" content="Truyện {{$story->story_title}} của tác giả Lưu Thiên Thiên.">
     <meta property="og:url" content="{{$story->story_slug}}/">
-    <meta property="book:author" content="http://localhost/truyenfull/tac-gia/luu-thien-thien/">
+    <meta property="book:author" content="http://localhost/truyenfull/tac-gia/{{$story->author_slug}}">
     <meta property="book:release_date" content="{{$story->created_at}}">
     <meta property="book:tag" content="{{$story->story_title}}">
     <meta property="book:tag" content="duyen phan ngan nam">
@@ -44,6 +44,7 @@
 </head>
 
 <body id="body_truyen">
+    <input type="hidden" id="token" name="_token" value="{!! csrf_token() !!}">
     <div id="wrap">
         <div class="navbar navbar-default navbar-static-top" role="navigation" id="nav">
             <div class="container">
@@ -168,13 +169,13 @@
                         </div>
                         <div class="info">
                             <div>
-                                <h3>Tác giả:</h3><a itemprop="author" href="http://localhost/truyenfull/tac-gia/luu-thien-thien/" title="Lưu Thiên Thiên">{{$story->story_author}}</a></div>
+                                <h3>Tác giả:</h3><a itemprop="author" href="http://localhost/truyenfull/tac-gia/{{$story->author_slug}}" title="{{$story->story_author}}">{{$story->story_author}}</a></div>
                             <div>
-                                <h3>Thể loại:</h3><a itemprop="genre" href="http://localhost/truyenfull/the-loai/ngon-tinh/" title="Ngôn Tình">Ngôn Tình</a>, <a itemprop="genre" href="http://localhost/truyenfull/the-loai/xuyen-khong/" title="Xuyên Không">Xuyên Không</a>, <a itemprop="genre" href="http://localhost/truyenfull/the-loai/co-dai/" title="Cổ Đại">Cổ Đại</a></div>
+                                <h3>Thể loại:</h3>{!!$story->term!!}</div>
                             <div>
-                                <h3>Nguồn:</h3><span class="source">Trang Truyện Mạng</span></div>
+                                <h3>Nguồn:</h3><span class="source">{{$story->story_source}}</span></div>
                             <div>
-                                <h3>Trạng thái:</h3><span class="text-success">Full</span></div>
+                                <h3>Trạng thái:</h3><span class="text-success">{{$story->story_status}}</span></div>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-8 col-md-8 desc">
@@ -211,36 +212,33 @@
                 <!--<div class="hidden-xs hidden-sm col-md-2 col-desk-20"></div>-->
                 <div class="col-xs-12" id="list-chapter">
                     <div class="title-list">
-                        <h2>Danh sách chương</h2></div>
+                        <h2>Danh sách chương</h2>
+                    </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <ul class="list-chapter">
-                                <li><span class="glyphicon glyphicon-certificate"></span> <a href="{{$story->story_slug}}/chuong-1/" title="{{$story->story_title}} - Chương 1"><span class="chapter-text"><span>Chương </span></span>1</a></li>
-                                <li><span class="glyphicon glyphicon-certificate"></span> <a href="{{$story->story_slug}}/chuong-2/" title="{{$story->story_title}} - Chương 2"><span class="chapter-text"><span>Chương </span></span>2</a></li>
-                                <li><span class="glyphicon glyphicon-certificate"></span> <a href="{{$story->story_slug}}/chuong-3/" title="{{$story->story_title}} - Chương 3"><span class="chapter-text"><span>Chương </span></span>3</a></li>
-                                <li><span class="glyphicon glyphicon-certificate"></span> <a href="{{$story->story_slug}}/chuong-4/" title="{{$story->story_title}} - Chương 4"><span class="chapter-text"><span>Chương </span></span>4</a></li>
-                                <li><span class="glyphicon glyphicon-certificate"></span> <a href="{{$story->story_slug}}/chuong-5/" title="{{$story->story_title}} - Chương 5"><span class="chapter-text"><span>Chương </span></span>5</a></li>
-                                <li><span class="glyphicon glyphicon-certificate"></span> <a href="{{$story->story_slug}}/chuong-6/" title="{{$story->story_title}} - Chương 6"><span class="chapter-text"><span>Chương </span></span>6</a></li>
-                                <li><span class="glyphicon glyphicon-certificate"></span> <a href="{{$story->story_slug}}/chuong-7/" title="{{$story->story_title}} - Chương 7"><span class="chapter-text"><span>Chương </span></span>7</a></li>
-                                <li><span class="glyphicon glyphicon-certificate"></span> <a href="{{$story->story_slug}}/chuong-8/" title="{{$story->story_title}} - Chương 8"><span class="chapter-text"><span>Chương </span></span>8</a></li>
-                                <li><span class="glyphicon glyphicon-certificate"></span> <a href="{{$story->story_slug}}/chuong-9/" title="{{$story->story_title}} - Chương 9"><span class="chapter-text"><span>Chương </span></span>9</a></li>
-                                <li><span class="glyphicon glyphicon-certificate"></span> <a href="{{$story->story_slug}}/chuong-10/" title="{{$story->story_title}} - Chương 10"><span class="chapter-text"><span>Chương </span></span>10</a></li>
-                                <li><span class="glyphicon glyphicon-certificate"></span> <a href="{{$story->story_slug}}/chuong-11/" title="{{$story->story_title}} - Chương 11"><span class="chapter-text"><span>Chương </span></span>11</a></li>
-                                <li><span class="glyphicon glyphicon-certificate"></span> <a href="{{$story->story_slug}}/chuong-12/" title="{{$story->story_title}} - Chương 12"><span class="chapter-text"><span>Chương </span></span>12</a></li>
-                                <li><span class="glyphicon glyphicon-certificate"></span> <a href="{{$story->story_slug}}/chuong-13/" title="{{$story->story_title}} - Chương 13"><span class="chapter-text"><span>Chương </span></span>13</a></li>
-                                <li><span class="glyphicon glyphicon-certificate"></span> <a href="{{$story->story_slug}}/chuong-14/" title="{{$story->story_title}} - Chương 14"><span class="chapter-text"><span>Chương </span></span>14</a></li>
-                                <li><span class="glyphicon glyphicon-certificate"></span> <a href="{{$story->story_slug}}/chuong-15/" title="{{$story->story_title}} - Chương 15: Phiên ngoại"><span class="chapter-text"><span>Chương </span></span>15: Phiên ngoại</a></li>
+   
+                            @foreach($chapters as $index => $chapter)
+                                @if($index == 25)
+                                </ul>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                                <ul class="list-chapter">
+                                @endif
+                                <li><span class="glyphicon glyphicon-certificate"></span> <a href="{{$story->story_slug}}/{{$chapter->chapter_slug}}" title="{{$story->story_title}} - {{$chapter->chapter_title}}"><span class="chapter-text">{{$chapter->chapter_title}}</a></li>
+                            @endforeach    
                             </ul>
                         </div>
                     </div>
                     <input id="truyen-id" type="hidden" value="9801">
                     <input id="total-page" type="hidden" value="1">
+                    {!! $chapters->links('partials.paginator',['story' => $story]) !!}
                 </div>
                 <div class="visible-md visible-lg">
                     <div class="col-xs-12 comment-box">
                         <div class="title-list">
                             <h2>Bình luận truyện</h2></div>
-                        <div class="fb-comments" data-href="{{$story->story_slug}}/" data-width="832" data-numposts="5" data-colorscheme="light"></div>
+            <div class="fb-comments" data-href="{{$story->story_slug}}/" data-width="832" data-numposts="5" data-colorscheme="light"></div>
                     </div>
                 </div>
             </div>
